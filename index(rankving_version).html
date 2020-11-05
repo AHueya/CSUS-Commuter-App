@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index_styles.css">
+        <title>FMZ Commuter App</title>
+		<link rel="stylesheet" href="ranking_styles.css">
+		<script src="ranking.js"></script>
+    </head>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <style>
+        @media only screen and (max-width: 700px) {
+            header {
+                background-image: linear-gradient(270deg, rgba(0,78,56,0.3) 5%, rgba(0,78,56,.6) 100%), url('images/structurev-2000.jpg');
+            }
+            .banner {
+                width: 100%;
+            }
+        }
+    </style>
+    <nav>
+        <img src="images/Primary_Horizontal_3_Color_gld_hnd.png" alt="Sacramento State University Logo" style="width:187px; height:51.25">
+        <hr>
+    </nav>
+    <header>
+        <div class="banner">
+            <h2 class="banner_text">University Transportation & Parking Services</h2>
+            <h4 class="banner_alt_text">California State University, Sacramento</h4>
+        </div>
+    </header>
+    <body>
+        <hr>
+        <h1>FMZ Commuter App</h1>
+        <div class="text">
+          <p>The FMZ Commuter App is an online web tool designed to help you determine the best means of transportation to get to Sac State.</p>
+          <p>Taking three factors into consideration: money, time, and sustainability, the tool will provide you with the optimal form of
+            transportation to get to Sac State.</p>
+          <p>Hit the button below to begin the survey or checkout some other helpful links.</p>
+        </div>
+        <div class="button"><button type="button" name="button" onclick="document.getElementById('myModal').style.display='block'">Begin Survey</button></div>
+        <hr>
+		
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content" id="modal">
+			<span class = "close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+			<label for="ranks">Rankings from Most Important to Least Important:</label>
+			<br> <br>
+			<select name="ranks" id="ranks">
+			  <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+			</select>
+			
+			<select name="ranks" id="ranks2">
+			  <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+			</select>
+			
+			<select name="ranks" id="ranks3">
+			  <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+			</select>
+
+				  <!--<button onclick="myFunction()">Submit</button> -->
+				  
+				  <button onclick="myFunction()">Lock in Ranking</button>
+				  <p id="explain">Click the "Lock In Ranking" button after selecting the position for each rank. (Refresh if you want to restart.)</p>
+				  <p id="emptyrank1">Rank 1:</p>
+				  <p id="emptyrank2">Rank 2:</p>
+				  <p id="emptyrank3">Rank 3:</p>
+
+				  <br><br>
+			</div>
+		</div>
+		
+		
+		
+		
+        <h1>Helpful Links</h1>
+        <div class="text" style="text-align:center">
+          <p><a href="https://www.csus.edu/parking-transportation/">University Transportation & Parking Services</a></p>
+          <p><a href="https://www.google.com/maps/place/California+State+University,+Sacramento/@38.561296,-121.4262406,17z/data=!3m1!4b1!4m5!3m4!1s0x809ada8d31c6f4db:0x763ddc32823f5b82!8m2!3d38.5612918!4d-121.4240519">Google Maps</a></p>
+          <p><a href="https://www.uber.com/">Uber</a></p>
+        </div>
+    </body>
+</html>
