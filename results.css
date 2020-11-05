@@ -1,0 +1,139 @@
+nav {
+    background-color: #ffffff;
+}
+header {
+    margin: 0px;
+    height:200px;
+    background-image: linear-gradient(270deg, rgba(196,182,129,0) 60%, rgba(0,78,56,0.6) 60%, rgba(0,78,56,1) 100%), url('images/structurev-2000.jpg');
+    background-size: cover;
+    text-align: left;
+}
+body {
+  background-color:	rgb(0,78,56);
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+
+.results_Layout {
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 0px;
+    border: 4px outset #ffffff;
+    /*background-color:  #f0e1b0;*/
+    background-color: #ffffff;
+    position: relative;
+}
+
+.top_banner {
+	text-align: left;
+	color: rgb(0,78,56);
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.travel_box {
+	background-color: #f0e1b0;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+	height: 300px;
+}
+
+.travel_option {
+	text-align: center;
+}
+
+.travel_time {
+	text-align: center;
+
+	
+}	
+
+.result_boxes_left {
+	background-color: #1D3C34;
+	margin-left: 15%;
+	margin-right: 65%;
+	width: 30%;
+	float: left;
+}
+
+.result_boxes_right {
+	background-color: #1D3C34;
+	margin-left: 65%;
+	margin-right: 15%;
+	width: 30%;
+	float: right;
+}
+
+
+.result_write {
+	color: #1D3C34;
+	text-align: center;
+	
+}
+
+.retake_survey {
+	background-color: #1D3C34;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+}
+
+.retake_survey_write {
+	color: #f0e1b0;
+	text-align: left;
+}
+
+.banner {
+    margin: 0px;
+    width: 40%;
+    height: 200px;
+    float: left;
+}
+
+.banner_text {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 50px;
+    margin: 10px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.banner_alt_text {
+    padding-top: 0px;
+    padding-bottom: 100px;
+    padding-left: 60px;
+    margin: 0px;
+    text-align: left;
+    color: #f0e1b0;
+}
+
+.bottomGBorder{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 30px;
+    height: 7px;
+    background-image: linear-gradient(to right, #481c63 0%, #f9c606 28%, #58b947 64%, #008453 100%);
+}
+
+.topGBorder{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    height: 7px;
+    background-image: linear-gradient(to right, #481c63 0%, #f9c606 28%, #58b947 64%, #008453 100%);
+}
+
+.footer{
+    background-color: black;
+    height: 150px;
+}
+
+.footer2{
+    background-color: rgb(0,46,35);
+    height: 50px;
+}
+
