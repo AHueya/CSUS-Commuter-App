@@ -39,7 +39,7 @@
         </div>
         <div class="button"><button type="button" name="button" onclick="document.getElementById('myModal').style.display='block'">Begin Survey</button></div>
         <hr>
-		
+
 		<div id="myModal" class="modal">
 
 		  <!-- Modal content -->
@@ -47,26 +47,29 @@
 			<span class = "close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 			<label for="ranks">Rankings from Most Important to Least Important:</label>
 			<br> <br>
-			<select name="ranks" id="ranks">
+			<select name="ranks" id="ranks" onchange="myFunction()">
+              <option value="default">Choose</option>
+              <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+			</select>
+
+			<select name="ranks" id="ranks2" onchange="myFunction()">
+              <option value="default">Choose</option>
 			  <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
 			</select>
-			
-			<select name="ranks" id="ranks2">
-			  <option value="money">Money</option>
-			  <option value="time">Time</option>
-			  <option value="sustainability">Sustainability</option>
-			</select>
-			
-			<select name="ranks" id="ranks3">
+
+			<select name="ranks" id="ranks3" onchange="myFunction()">
+              <option value="default">Choose</option>
 			  <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
 			</select>
 
 				  <!--<button onclick="myFunction()">Submit</button> -->
-				  
+
 				  <button onclick="myFunction()">Lock in Ranking</button>
 				  <p id="explain">Click the "Lock In Ranking" button after selecting the position for each rank. (Refresh if you want to restart.)</p>
 				  <p id="emptyrank1">Rank 1:</p>
@@ -76,10 +79,10 @@
 				  <br><br>
 			</div>
 		</div>
-		
-		
-		
-		
+
+
+
+
         <h1>Helpful Links</h1>
         <div class="text" style="text-align:center">
           <p><a href="https://www.csus.edu/parking-transportation/">University Transportation & Parking Services</a></p>
