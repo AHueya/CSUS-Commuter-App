@@ -16,18 +16,23 @@
                 width: 100%;
             }
             .submit{
-                margin-left: 38%;
+                margin-left: 25%;
                 background-color: #BEB86F;
                 border-radius: 8px;
-                color: rgb(0,78,56);
+                color: black;
             }
             .carlist{
                 display: none;
-                margin-left: 42%;
+                margin-left: 43%;
+            }
+            .transportationTypesList {
+                margin-left:35% ;
+                text-align: center;
             }
             .mpg{
+                padding-left: 60px;
+                margin-left: 43%;
                 margin-bottom: 0px;
-                margin-left: 45%;
                 display: none;
             }
             .footer img{
@@ -68,7 +73,40 @@
     <body>
         <div class="surveyLayout">
             <hr class="layoutBorder">
-            <h2 class="timeTraveled">Time of travel <br></h2>
+            <h2 class="title">Transportation Survey</h2>
+            <h3 class="preferType">How do you plan on commuting to the campus?</h3>
+                <form action="">
+                    <select class="transportationTypesList"  id="transportationTypes" onchange="show_hide()">
+                        <option value=""></option>
+                        <option value="bike">Bike</option>
+                        <option value="bus">Bus</option>
+                        <option value="car">Car</option>
+                        <option value="carpool">Carpool/Car Share</option>
+                        <option value="light rail">Light Rail</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="rideshare">RideShare</option>
+                        <option value="walking">Walking</option>
+                    </select>
+                </form>
+                <h3 class="car">
+                    <form action="">
+                        <label class="typeOfCar" id="typeOfCar">Type of Car:</label for="cars">
+                            <select class="carlist" name="cars" id="cars">
+                                <option value=""></option>
+                                <option value="coupe">Coupe</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="truck">Truck</option>
+                                <option value="van">Van</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label class="mpgLabel" id ="mpgLabel"><br>MPG:</label>
+                            <input type="text" id="mpg" name="yes" class="mpg">
+                    </form>
+                </h3>
+            <hr class="sections">
+            <h2 class="timeTraveled">How long does it take for you to get to the campus?<br></h2>
+            <h4 class="approx">*Give an average approximation.</h4>
             <h3 class="time">
                 <form action="">
                     <label for="hrs">Hr(s):</label>
@@ -78,36 +116,7 @@
                 </form>
             </h3>
             <hr class="sections">
-            <h2 class="haveCar">Have a car?<br></h2>
-            <h3 class="car">
-                <form action="">
-                    <input type="checkbox" id="yes" name="yes" value="checkbox" onclick="show_hide()">
-                    <label for="yes">Check if you have a car and enter the information below. <br> <br> </label>
-                    <label class="typeOfCar">Type of Car:</label for="cars">
-                        <select class="carlist" name="cars" id="cars">
-                            <option value=""></option>
-                            <option value="coupe">Coupe</option>
-                            <option value="sedan">Sedan</option>
-                            <option value="suv">SUV</option>
-                            <option value="truck">Truck</option>
-                            <option value="van">Van</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <label class="mpgLabel"><br>MPG:</label>
-                        <input type="text" id="mpg" name="yes" class="mpg">
-                </form>
-            </h3>
-            <hr class="sections">
-            <h2 class="canCarpool">Available for Carpool? <br></h2>
-            <h3 class="check"></h3>
-            <h3 class="carpool">
-                <label for="yes1">Yes: </label>
-                <input type="radio" id="yes2" name="choice2" value="yes">
-                <label for="no1>">No: </label>
-                <input type="radio" id="no2" name="choice2" value="no">
-            </h3>
-            <hr class="sections">
-            <h2 class="distance">Distance from Campus <br></h2>
+            <h2 class="distance">What is your distance from campus?<br></h2>
             <h3 class="distanceAmount">
                 <form action="">
                     <input type="text" id="mi" name="mi">
@@ -115,7 +124,11 @@
                 </form>
             </h3>
             <hr class="sections">
-            <button class="submit">Submit</button>
+            <h2 class="comeTime">What time do you plan on coming to the campus?</h2>
+                <input type="time" class="plannedTime " id="plannedTime" name="plannedTime"min="01:00" max="12:00" required>
+            <hr class="sections">
+            <input type="button" class="submit" onclick="location.href='results.html';" value="Submit" />
+            <input type="button" class="cancel" onclick="location.href='index(ranking_version).html';" value="Cancel" />
         </div>
         <hr class="bottomGBorder">
         <div class="footer">
