@@ -32,56 +32,77 @@ var c = document.getElementById("ranks3")
   var valueb = b.options[b.selectedIndex].value;
   var valuec = c.options[c.selectedIndex].value;
 
+   
+
     if(value == "money") {
       document.getElementById("emptyrank1").innerHTML = "Rank 1: Money"
-        document.getElementById("ranks2").options[1].disabled = true;
-        document.getElementById("ranks3").options[1].disabled = true;
-
+      document.getElementById("ranks2").options[1].disabled = true;
+      document.getElementById("ranks3").options[1].disabled = true;
     }
-    else if (value == "time") {
-      document.getElementById("emptyrank1").innerHTML = "Rank 1: Time"
+
+      else if (value == "time") {
+        document.getElementById("emptyrank1").innerHTML = "Rank 1: Time"
         document.getElementById("ranks2").options[2].disabled = true;
         document.getElementById("ranks3").options[2].disabled = true;
-    }
-    else if (value == "sustainability") {
+      }
+      else if (value == "sustainability") {
         document.getElementById("emptyrank1").innerHTML = "Rank 1: Sustainability"
         document.getElementById("ranks2").options[3].disabled = true;
         document.getElementById("ranks3").options[3].disabled = true;
-    }
+      }
+      /*else if (value == {
+          alert("Rank 1 is not chosen");
+      }*/
 
     if(valueb == "money") {
       document.getElementById("emptyrank2").innerHTML = "Rank 2: Money"
-        document.getElementById("ranks").options[1].disabled = true;
-        document.getElementById("ranks3").options[1].disabled = true;
+      document.getElementById("ranks").options[1].disabled = true;
+      document.getElementById("ranks3").options[1].disabled = true;
     }
 
-    else if (valueb == "time") {
-      document.getElementById("emptyrank2").innerHTML = "Rank 2: Time"
+      else if (valueb == "time") {
+        document.getElementById("emptyrank2").innerHTML = "Rank 2: Time"
         document.getElementById("ranks").options[2].disabled = true;
         document.getElementById("ranks3").options[2].disabled = true;
-    }
+      }
 
-    else if (valueb == "sustainability") {
+      else if (valueb == "sustainability") {
         document.getElementById("emptyrank2").innerHTML = "Rank 2: Sustainability"
         document.getElementById("ranks").options[3].disabled = true;
         document.getElementById("ranks3").options[3].disabled = true;
-    }
+      }
 
     if(valuec == "money") {
       document.getElementById("emptyrank3").innerHTML = "Rank 3: Money"
-        document.getElementById("ranks").options[1].disabled = true;
-        document.getElementById("ranks2").options[1].disabled = true;
+      document.getElementById("ranks").options[1].disabled = true;
+      document.getElementById("ranks2").options[1].disabled = true;
     }
 
-    else if (valuec == "time") {
-      document.getElementById("emptyrank3").innerHTML = "Rank 3: Time"
+      else if (valuec == "time") {
+        document.getElementById("emptyrank3").innerHTML = "Rank 3: Time"
         document.getElementById("ranks").options[2].disabled = true;
         document.getElementById("ranks2").options[2].disabled = true;
-    }
+      }
 
-    else if (value == "sustainability") {
+      else if (valuec == "sustainability") {
         document.getElementById("emptyrank3").innerHTML = "Rank 3: Sustainability"
         document.getElementById("ranks").options[3].disabled = true;
         document.getElementById("ranks2").options[3].disabled = true;
+      }
     }
-}
+
+      function errorChecking() {
+
+        var a = document.getElementById("ranks")
+        var b = document.getElementById("ranks2")
+        var c = document.getElementById("ranks3")
+        var value = a.options[a.selectedIndex].value;
+        var valueb = b.options[b.selectedIndex].value;
+        var valuec = c.options[c.selectedIndex].value;
+
+        if (value == "default" || valueb == "default" || valuec == "default") {
+          alert("All 3 ranks are not chosen");
+        }
+      }
+   
+
