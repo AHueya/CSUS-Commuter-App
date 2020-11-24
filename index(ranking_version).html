@@ -43,41 +43,55 @@
 
 		<div id="myModal" class="modal">
 
-		  <!-- Modal content -->
+		  
 		  <div class="modal-content" id="modal">
 			<span class = "close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-			<label for="ranks">Rankings from Most Important to Least Important:</label>
-			<br> <br>
-			<select name="ranks" id="ranks" onchange="myFunction()">
+			<h2 class="title">Rankings from Most Important to Least Important:</h2>
+            
+            
+			<select class = "rank" name="ranks" id="ranks" onchange="myFunction()">
               <option value="default">Choose</option>
               <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
-			</select>
-
-			<select name="ranks" id="ranks2" onchange="myFunction()">
+            </select>
+            <br>
+            <br>
+            <br>
+            
+            
+			<select class = "rank" name="ranks" id="ranks2" onchange="myFunction()">
               <option value="default">Choose</option>
 			  <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
-			</select>
+            </select>
+             <br>
+             <br>
+             <br>
 
-			<select name="ranks" id="ranks3" onchange="myFunction()">
+            
+			<select class = "rank" name="ranks" id="ranks3" onchange="myFunction()">
               <option value="default">Choose</option>
 			  <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
-			</select>
+            </select>
+            
+            <br>
+            <br>
 
-			<!--<button onclick="myFunction()">Submit</button> -->
-
+            <h3 class="modalText">Click the "Submit" button to move on. (Refresh if you want to restart.)</h3>
+            <br><br>
+            <div class ="center">
             <button onclick="errorChecking()">Submit</button>
-			<p id="explain">Click the "Submit" button to move on. (Refresh if you want to restart.)</p>
-			<p id="emptyrank1">Rank 1:</p>
+			
+			<!--<p id="emptyrank1">Rank 1:</p>
 			<p id="emptyrank2">Rank 2:</p>
-		    <p id="emptyrank3">Rank 3:</p>
+		    <p id="emptyrank3">Rank 3:</p>-->
 
-				  <br><br>
+                  
+                  </div>
 			</div>
 		</div>
 
