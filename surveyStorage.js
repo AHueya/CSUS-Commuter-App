@@ -12,102 +12,72 @@
 function store() {
 
     // --- Method of Transportation -------------------------------------------------------------
-    var var_transportationTypes = document.getElementById("transportationTypes");
-    sessionStorage.setItem("transportationTypes", var_transportationTypes.value);
+    sessionStorage.setItem("transportationTypes", document.getElementById("transportationTypes").value);
 
         // --- Type of Transportation (Bike) ----------------------------------------------------
-        var var_bsafeRoute = document.getElementById("bsafeRoute");
-        sessionStorage.setItem("bsafeRoute", var_bsafeRoute.value);
-
-        var var_bnotSafeRoute = document.getElementById("bnotSafeRoute");
-        sessionStorage.setItem("bnotSafeRoute", var_bnotSafeRoute.value);
+        if(document.querySelector('input[name="bike"]:checked')) {
+            sessionStorage.setItem("bsaferoute", document.querySelector('input[name="bike"]:checked').value);
+        }
 
         // --- Type of Transportation (Bus) -----------------------------------------------------
-        var var_bHavePlannedRoute = document.getElementsById("bHavePlannedRoute");
-        sessionStorage.setItem("bHavePlannedRoute", var_bHavePlannedRoute.value);
-
-        var var_bNoPlannedRoute = document.getElementById("bNoPlannedRoute");
-        sessionStorage.setItem("bNoPlannedRoute", var_bNoPlannedRoute.value);
-
-        var var_bHaveCommuterSleeve = document.getElementById("bHaveCommuterSleeve");
-        sessionStorage.setItem("bHaveCommuterSleeve", var_bHaveCommuterSleeve.value);
-
-        var var_bNoCommuterSleeve = document.getElementById("bNoCommuterSleeve");
-        sessionStorage.setItem("bNoCommuterSleeve", var_bNoCommuterSleeve.value);
+        if(document.querySelector('input[name="bRoute"]:checked')) {
+            sessionStorage.setItem("bHavePlannedRoute", document.querySelector('input[name="bRoute"]:checked').value);
+        }
+        if(document.querySelector('input[name="bCommuterSleeve"]:checked')) {
+            sessionStorage.setItem("bHaveCommuterSleeve", document.querySelector('input[name="bCommuterSleeve"]:checked').value);
+        }
 
         // --- Type of Transportation (Car) -----------------------------------------------------
-        var var_year = document.getElementById("year");
-        sessionStorage.setItem("year", var_year.value);
+        sessionStorage.setItem("year", document.getElementById("year").value);
 
-        var var_cars = document.getElementById("cars");
-        sessionStorage.setItem("cars", var_cars.value);
+        sessionStorage.setItem("cars", document.getElementById("cars").value);
 
-        var var_mpg = document.getElementById("mpg");
-        sessionStorage.setItem("mpg", var_mpg.value);
+        sessionStorage.setItem("mpg", document.getElementById("mpg").value);
 
         // --- Type of Transportation (Carpool) -------------------------------------------------
-        var var_cpNumPeople = document.getElementById("cpNumPeople");
-        sessionStorage.setItem("cpNumPeople", var_cpNumPeople.value);
+        sessionStorage.setItem("cpNumPeople", document.getElementById("cpNumPeople1").value);
 
-        var var_cpYear = document.getElementById("cpYear");
-        sessionStorage.setItem("var_cpYear", var_cpYear.value);
+        sessionStorage.setItem("cpYear", document.getElementById("cpYear").value);
 
-        var var_cpTypeOfCar = document.getElementById("cpTypeOfCar");
-        sessionStorage.setItem("cpTypeOfCar", var_cpTypeOfCar.value);
+        sessionStorage.setItem("cpTypeOfCar", document.getElementById("cpCars").value);
 
-        var var_cpMpg = document.getElementById("cpMpg");
-        sessionStorage.setItem("cpMpg", var_cpMpg.value);
+        sessionStorage.setItem("cpMpg", document.getElementById("cpMpg").value);
 
         // --- Type of Transportation (Light Rail) ----------------------------------------------
-        var var_lHavePlannedRoute = document.getElementById("lHavePlannedRoute");
-        sessionStorage.setItem("lHavePlannedRoute", var_lHavePlannedRoute.value);
+        if(document.querySelector('input[name="lRoute"]:checked')) {
+            sessionStorage.setItem("lHavePlannedRoute", document.querySelector('input[name="lRoute"]:checked').value);
+        }
 
-        var var_lNoPlannedRoute = document.getElementById("lNoPlannedRoute");
-        sessionStorage.setItem("lNoPlannedRoute", var_lNoPlannedRoute.value);
-
-        var var_lHaveCommuterSleeve = document.getElementById("lHaveCommuterSleeve");
-        sessionStorage.setItem("lHaveCommuterSleeve", var_bNoCommuterSleeve.value);
-
-        var var_lNoCommuterSleeve = document.getElementById("lNoCommuterSleeve");
-        sessionStorage.setItem("lNoCommuterSleeve", var_lNoCommuterSleeve.value);
+        if(document.querySelector('input[name="lCommuterSleeve"]:checked')) {
+            sessionStorage.setItem("lHaveCommuterSleeve", document.querySelector('input[name="lCommuterSleeve"]:checked').value);
+        }
 
         // --- Type of Transportation (Motorcycle) ----------------------------------------------
-        var var_myear = document.getElementById("myear");
-        sessionStorage.setItem("myear", val_myear.value);
+        sessionStorage.setItem("myear", document.getElementById("myear").value);
 
-        var var_motorcycles = document.getElementById("motorcycles");
-        sessionStorage.setItem("motorcycles", val_motorcycles.value);
+        sessionStorage.setItem("motorcycles", document.getElementById("motorcycles").value);
 
-        var var_mmpg = document.getElementById("mmpg");
-        sessionStorage.setItem("mmpg", val_mmpg.value);
+        sessionStorage.setItem("mmpg", document.getElementById("mmpg").value);
 
         // --- Type of Transportation (Rideshare) -----------------------------------------------
-        var var_rNumPeople2 = document.getElementById("rNumPeople2");
-        sessionStorage.setItem("rNumPeople2", val_rNumPeople2.value);
+        sessionStorage.setItem("rNumPeople2", document.getElementById("rNumPeople2").value);
 
-        var var_yesTakeAgain1 = document.getElementById("yesTakeAgain1");
-        sessionStorage.setItem("yesTakeAgain1", val_yesTakeAgain1.value);
-
-        var var_noTakeAgain1 = document.getElementById("noTakeAgain1");
-        sessionStorage.setItem("noTakeAgain1", val_noTakeAgain1.value);
+        if(document.querySelector('input[name="takeAgain1"]:checked')) {
+            sessionStorage.setItem("yesTakeAgain1", document.querySelector('input[name="takeAgain1"]:checked').value);
+        }
 
         // --- Type of Transportation (Walking) -------------------------------------------------
-        var var_wsafeRoute = document.getElementById("wsafeRoute");
-        sessionStorage.setItem("wsafeRoute", val_wsafeRoute.value);
-
-        var var_wnotSafeRoute = document.getElementById("wnotSafeRoute");
-        sessionStorage.setItem("wnotSafeRoute", val_wnotSafeRoute.value);
+        if(document.querySelector('input[name="wSafeR"]:checked')) {
+            sessionStorage.setItem("wsafeRoute", document.querySelector('input[name="wSafeR"]:checked').value);
+        }
 
     // --- Distance From Campus -----------------------------------------------------------------
-    var var_mi = document.getElementById("mi");
-    sessionStorage.setItem("mi", var_mi.value);
+    sessionStorage.setItem("mi", document.getElementById("mi").value);
 
     // --- Number of Commutes to Campus -----------------------------------------------------------------
-    var var_numOfDays = document.getElementById("numOfDays");
-    sessionStorage.setItem("numOfDays", val_numOfDays.value);
+    sessionStorage.setItem("numOfDays", document.getElementById("numOfDays").value);
 
     // --- Planned Departure Time ---------------------------------------------------------------
-    var var_plannedTime = document.getElementById("plannedTime");
-    sessionStorage.setItem("plannedTime", var_plannedTime.value);
+    sessionStorage.setItem("plannedTime", document.getElementById("plannedTime").value);
 
 }
