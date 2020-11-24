@@ -8,14 +8,6 @@ header {
     background-size: cover;
     text-align: left;
 }
-
-hr {
-    height: 7px;
-    border-width: 0px;
-    background-color: #c4b581;
-    margin: 0px;
-}
-
 body {
   background-color:	rgb(0,78,56);
   margin: 0px;
@@ -36,7 +28,8 @@ body {
 
 .top_banner {
 	text-align: left;
-	color: rgb(0,78,56);
+	/*color: rgb(0,78,56); */
+	color: #1D3C34;
 	margin-left: 15%;
 	margin-right: 15%;
 }
@@ -49,14 +42,10 @@ body {
 	height: 300px;
 }
 
-.travel_option {
+.travel_categories {
+	color: #1D3C34;
 	text-align: center;
-}
-
-.travel_time {
-	text-align: center;
-
-
+	font-size: 40px;
 }
 
 .result_boxes_left {
@@ -79,7 +68,14 @@ body {
 .result_write {
 	color: #1D3C34;
 	text-align: center;
+	
+}
 
+.result_write_top {
+	color: #1D3C34;
+	text-align: center;
+	font-size: 30px;
+	
 }
 
 .retake_survey {
@@ -132,7 +128,6 @@ body {
     padding-bottom: 0px;
     margin: 0px;
     height: 7px;
-    border: 0px;
     background-image: linear-gradient(to right, #481c63 0%, #f9c606 28%, #58b947 64%, #008453 100%);
 }
 
@@ -145,3 +140,4 @@ body {
     background-color: rgb(0,46,35);
     height: 50px;
 }
+

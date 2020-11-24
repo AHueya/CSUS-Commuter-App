@@ -1,10 +1,11 @@
 <!DOCTYPE html>	
 <html lang="en" dir="ltr">
-    <head>
+    <head>	
         <meta charset="utf-8">
         <link rel="stylesheet" href="results.css">
         <title>FMZ Commuting Survey | Sacramento State</title>
-        <script src="car.js"></script>
+        <script	src="get_rankings.js">
+		</script>
     </head>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <style>
@@ -34,46 +35,52 @@
         </div>
     </header>
 	<hr class="topGBorder">
-	<body>
+	
+	<body onload="get_rankings()">
 		<div class="results_layout">
 			<h2 class="top_banner">Based off your survey data here are your ranked travel options:<br></h2>
 			<table class="travel_box">	
 				<tr>
-					<th style="text-align:center"> Travel Option: </th>
-					<th style="text-align:center"> Travel Time: </th>
+					<th class="travel_categories"> Travel Option: </th>
+					<th class="travel_categories"> Money: ($)</th>
+					<th class="travel_categories"> Sustainability: (F^3 CO2)</th>
+					<th class="travel_categories"> Time: (Minutes)</th>
 				</tr>
 					
 				<!--First row -->
 				<tr>
-					<th class="result_write">Car/Uber</th>
-					<th class="result_write">15 min</th>
+					<th class="result_write_top"><p id="travel_one"></p> </th>
+					<th class="result_write_top"><p id="money_one"> </p></th>
+					<th class="result_write_top"><p id="sust_one"> </p></th>
+					<th class="result_write_top"><p id="time_one"> </p></th>
+					
 				</tr>
 				
 				<!--Second row -->
 				<tr>
-					<th class="result_write">Public Transportation</th>
-					<th class="result_write">30 min</th>
+					<th class="result_write"><p id="travel_two"> </p></th>
+					<th class="result_write"><p id="money_two"> </p></th>
+					<th class="result_write"><p id="sust_two"> </p></th>
+					<th class="result_write"><p id="time_two"> </p></th>
 				</tr>
 				
 				<!--Third row -->
 				<tr>
-					<th class="result_write">Bike</th>
-					<th class="result_write">35 min</th>
+					<th class="result_write"><p id="travel_three"> </p></th>
+					<th class="result_write"><p id="money_three"> </p></th>
+					<th class="result_write"><p id="sust_three"> </p></th>
+					<th class="result_write"><p id="time_three"></p></th>
 				</tr>
 				
-				<!--Fourth row -->
-				<tr>
-					<th class="result_write">Carpool</th>
-					<th class="result_write">15 min</th>
-				</tr>
+
 			</table>
 				
 			<div class="retake_survey">
 				<h3 class="retake_survey_write">If you would like to take the survey again please</h2>
-				<button onclick="location.href='survey_page.html';">Click Here</button>
+				<button>Click Here</button>
 			</div>
 		
-		
+	
 	</div>
 	
 	 <hr class="bottomGBorder">
@@ -85,3 +92,12 @@
         </div>
 	</body>
 </html>
+
+			
+			
+		
+		
+		
+			
+			
+	
