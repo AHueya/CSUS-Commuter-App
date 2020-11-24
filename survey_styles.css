@@ -430,6 +430,40 @@ input[type=text], focus {
 }
 /*-----------------------------------------*/
 
+/*---------------Time Traveled-------------*/
+.timeTraveled {
+    padding-top: 1%;
+    text-align: center;
+    font-size: 130%;
+    color: black;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.time {
+    text-align: center;
+}
+
+.approx {
+    margin-left: 37%;
+    color: rgb(0,78,56);
+}
+/*-----------------------------------------*/
+
+/*-----------------distance----------------*/
+.distance {
+    text-align: center;
+    font-size: 150%;
+    color: rgb(0,78,56);
+    font-size: 130%;
+    color: black;
+}
+
+.distanceAmount {
+    text-align: center;
+}
+/*-----------------------------------------*/
+
 /*How often do you come to the campus per week?*/
 .comingToCampus {
     text-align: center;
