@@ -55,44 +55,44 @@ function show_hide() {
 
     if (transType.value == "bike") {
         document.getElementById("bhaveBike").style.display="block";
-        document.getElementById("bsafeRoute").style.display="block";
-        document.getElementById("bnotSafeRoute").style.display="block";
+        document.getElementById("bsafeRoute1").style.display="block";
+        document.getElementById("bnotSafeRoute1").style.display="block";
     } else {
         document.getElementById("bhaveBike").style.display="none";
-        document.getElementById("bsafeRoute").style.display="none";
-        document.getElementById("bnotSafeRoute").style.display="none";
+        document.getElementById("bsafeRoute1").style.display="none";
+        document.getElementById("bnotSafeRoute1").style.display="none";
     }
 
     if (transType.value == "bus") {
         document.getElementById("bPlannedRoute").style.display="block";
-        document.getElementById("bHavePlannedRoute").style.display="block";
-        document.getElementById("bNoPlannedRoute").style.display="block";
+        document.getElementById("bHavePlannedRoute1").style.display="block";
+        document.getElementById("bNoPlannedRoute1").style.display="block";
         document.getElementById("bCommuterSleeve").style.display="block";
-        document.getElementById("bHaveCommuterSleeve").style.display="block";
-        document.getElementById("bNoCommuterSleeve").style.display="block";
+        document.getElementById("bHaveCommuterSleeve1").style.display="block";
+        document.getElementById("bNoCommuterSleeve1").style.display="block";
     } else {
         document.getElementById("bPlannedRoute").style.display="none";
-        document.getElementById("bHavePlannedRoute").style.display="none";
-        document.getElementById("bNoPlannedRoute").style.display="none";
+        document.getElementById("bHavePlannedRoute1").style.display="none";
+        document.getElementById("bNoPlannedRoute1").style.display="none";
         document.getElementById("bCommuterSleeve").style.display="none";
-        document.getElementById("bHaveCommuterSleeve").style.display="none";
-        document.getElementById("bNoCommuterSleeve").style.display="none";
+        document.getElementById("bHaveCommuterSleeve1").style.display="none";
+        document.getElementById("bNoCommuterSleeve1").style.display="none";
     }
 
     if (transType.value == "light rail") {
         document.getElementById("lPlannedRoute").style.display="block";
-        document.getElementById("lHavePlannedRoute").style.display="block";
-        document.getElementById("lNoPlannedRoute").style.display="block";
+        document.getElementById("lHavePlannedRoute1").style.display="block";
+        document.getElementById("lNoPlannedRoute1").style.display="block";
         document.getElementById("lCommuterSleeve").style.display="block";
-        document.getElementById("lHaveCommuterSleeve").style.display="block";
-        document.getElementById("lNoCommuterSleeve").style.display="block";
+        document.getElementById("lHaveCommuterSleeve1").style.display="block";
+        document.getElementById("lNoCommuterSleeve1").style.display="block";
     } else {
         document.getElementById("lPlannedRoute").style.display="none";
-        document.getElementById("lHavePlannedRoute").style.display="none";
-        document.getElementById("lNoPlannedRoute").style.display="none";
+        document.getElementById("lHavePlannedRoute1").style.display="none";
+        document.getElementById("lNoPlannedRoute1").style.display="none";
         document.getElementById("lCommuterSleeve").style.display="none";
-        document.getElementById("lHaveCommuterSleeve").style.display="none";
-        document.getElementById("lNoCommuterSleeve").style.display="none";
+        document.getElementById("lHaveCommuterSleeve1").style.display="none";
+        document.getElementById("lNoCommuterSleeve1").style.display="none";
     }
 
     if (transType.value == "rideshare") {
@@ -115,11 +115,11 @@ function show_hide() {
 
     if (transType.value == "walking") {
         document.getElementById("walk").style.display="block";
-        document.getElementById("wsafeRoute").style.display="block";
-        document.getElementById("wnotSafeRoute").style.display="block";
+        document.getElementById("wsafeRoute1").style.display="block";
+        document.getElementById("wnotSafeRoute1").style.display="block";
     } else {
         document.getElementById("walk").style.display="none";
-        document.getElementById("wsafeRoute").style.display="none";
-        document.getElementById("wnotSafeRoute").style.display="none";
+        document.getElementById("wsafeRoute1").style.display="none";
+        document.getElementById("wnotSafeRoute1").style.display="none";
     }
 }
