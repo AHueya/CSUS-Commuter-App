@@ -27,9 +27,9 @@ body {
 }
 
 .top_banner {
-	text-align: left;
+	text-align: center;
 	/*color: rgb(0,78,56); */
-	color: #1D3C34;
+	color: #f0e1b0;
 	margin-left: 15%;
 	margin-right: 15%;
 }
@@ -38,6 +38,7 @@ body {
 	background-color: #f0e1b0;
 	margin-left: 15%;
 	margin-right: 15%;
+	margin-top: 20px;
 	width: 70%;
 	height: 300px;
 }
@@ -45,7 +46,7 @@ body {
 .travel_categories {
 	color: #1D3C34;
 	text-align: center;
-	font-size: 40px;
+	font-size:30px;
 }
 
 .result_boxes_left {
@@ -74,20 +75,21 @@ body {
 .result_write_top {
 	color: #1D3C34;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	
 }
 
 .retake_survey {
 	background-color: #1D3C34;
-	margin-left: 15%;
-	margin-right: 15%;
-	width: 70%;
+	margin-left: 33%;
+	margin-right: 33%;
+	width: 34%;
+	margin-top: 50px;
 }
 
 .retake_survey_write {
 	color: #f0e1b0;
-	text-align: left;
+	text-align: center;
 }
 
 .banner {
@@ -140,4 +142,23 @@ body {
     background-color: rgb(0,46,35);
     height: 50px;
 }
+
+.phoneNumber{
+    color: #c4b581;
+}
+
+.sacstate_info{
+    display: inline-block;
+    color: white;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.sacstate_logo{
+    height: 60%;
+    margin-top: 2%;
+    margin-left: 4%;
+    float: left;
+}
+
 
