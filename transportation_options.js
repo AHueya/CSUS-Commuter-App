@@ -54,72 +54,68 @@ function show_hide() {
     }
 
     if (transType.value == "bike") {
-        document.getElementById("bhaveBike").style.display="block";
-        document.getElementById("bsafeRoute1").style.display="block";
-        document.getElementById("bnotSafeRoute1").style.display="block";
+        document.getElementsByClassName("bhaveBike")[0].style.display="block";
+        document.getElementsByClassName("bsafeRoute")[0].style.display="block";
+        document.getElementsByClassName("bnotSafeRoute")[0].style.display="block";
     } else {
-        document.getElementById("bhaveBike").style.display="none";
-        document.getElementById("bsafeRoute1").style.display="none";
-        document.getElementById("bnotSafeRoute1").style.display="none";
+        document.getElementsByClassName("bhaveBike")[0].style.display="none";
+        document.getElementsByClassName("bsafeRoute")[0].style.display="none";
+        document.getElementsByClassName("bnotSafeRoute")[0].style.display="none";
     }
 
     if (transType.value == "bus") {
-        document.getElementById("bPlannedRoute").style.display="block";
-        document.getElementById("bHavePlannedRoute1").style.display="block";
-        document.getElementById("bNoPlannedRoute1").style.display="block";
-        document.getElementById("bCommuterSleeve").style.display="block";
-        document.getElementById("bHaveCommuterSleeve1").style.display="block";
-        document.getElementById("bNoCommuterSleeve1").style.display="block";
+        document.getElementsByClassName("bPlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("bHavePlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("bNoPlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("bCommuterSleeve")[0].style.display="block";
+        document.getElementsByClassName("bHaveCommuterSleeve")[0].style.display="block";
+        document.getElementsByClassName("bNoCommuterSleeve")[0].style.display="block";
     } else {
-        document.getElementById("bPlannedRoute").style.display="none";
-        document.getElementById("bHavePlannedRoute1").style.display="none";
-        document.getElementById("bNoPlannedRoute1").style.display="none";
-        document.getElementById("bCommuterSleeve").style.display="none";
-        document.getElementById("bHaveCommuterSleeve1").style.display="none";
-        document.getElementById("bNoCommuterSleeve1").style.display="none";
+        document.getElementsByClassName("bPlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("bHavePlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("bNoPlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("bCommuterSleeve")[0].style.display="none";
+        document.getElementsByClassName("bHaveCommuterSleeve")[0].style.display="none";
+        document.getElementsByClassName("bNoCommuterSleeve")[0].style.display="none";
     }
 
     if (transType.value == "light rail") {
-        document.getElementById("lPlannedRoute").style.display="block";
-        document.getElementById("lHavePlannedRoute1").style.display="block";
-        document.getElementById("lNoPlannedRoute1").style.display="block";
-        document.getElementById("lCommuterSleeve").style.display="block";
-        document.getElementById("lHaveCommuterSleeve1").style.display="block";
-        document.getElementById("lNoCommuterSleeve1").style.display="block";
+        document.getElementsByClassName("lPlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("lHavePlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("lNoPlannedRoute")[0].style.display="block";
+        document.getElementsByClassName("lCommuterSleeve")[0].style.display="block";
+        document.getElementsByClassName("lHaveCommuterSleeve")[0].style.display="block";
+        document.getElementsByClassName("lNoCommuterSleeve")[0].style.display="block";
     } else {
-        document.getElementById("lPlannedRoute").style.display="none";
-        document.getElementById("lHavePlannedRoute1").style.display="none";
-        document.getElementById("lNoPlannedRoute1").style.display="none";
-        document.getElementById("lCommuterSleeve").style.display="none";
-        document.getElementById("lHaveCommuterSleeve1").style.display="none";
-        document.getElementById("lNoCommuterSleeve1").style.display="none";
+        document.getElementsByClassName("lPlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("lHavePlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("lNoPlannedRoute")[0].style.display="none";
+        document.getElementsByClassName("lCommuterSleeve")[0].style.display="none";
+        document.getElementsByClassName("lHaveCommuterSleeve")[0].style.display="none";
+        document.getElementsByClassName("lNoCommuterSleeve")[0].style.display="none";
     }
 
     if (transType.value == "rideshare") {
         document.getElementById("rNumPeople").style.display="block";
         document.getElementById("rNumPeople2").style.display="inline";
-        document.getElementById("takeAgain").style.display="block";
-        document.getElementById("yesTakeAgain").style.display="block";
-        document.getElementById("yesTakeAgain1").style.display="inline";
-        document.getElementById("noTakeAgain").style.display="block";
-        document.getElementById("noTakeAgain1").style.display="inline";
+        document.getElementsByClassName("takeAgain")[0].style.display="block";
+        document.getElementsByClassName("yesTakeAgain")[0].style.display="block";
+        document.getElementsByClassName("noTakeAgain")[0].style.display="block";
     } else {
         document.getElementById("rNumPeople").style.display="none";
         document.getElementById("rNumPeople2").style.display="none";
-        document.getElementById("takeAgain").style.display="none";
-        document.getElementById("yesTakeAgain").style.display="none";
-        document.getElementById("yesTakeAgain1").style.display="none";
-        document.getElementById("noTakeAgain").style.display="none";
-        document.getElementById("noTakeAgain1").style.display="none";
+        document.getElementsByClassName("takeAgain")[0].style.display="none";
+        document.getElementsByClassName("yesTakeAgain")[0].style.display="none";
+        document.getElementsByClassName("noTakeAgain")[0].style.display="none";
     } 
 
     if (transType.value == "walking") {
-        document.getElementById("walk").style.display="block";
-        document.getElementById("wsafeRoute1").style.display="block";
-        document.getElementById("wnotSafeRoute1").style.display="block";
+        document.getElementsByClassName("walk")[0].style.display="block";
+        document.getElementsByClassName("wsafeRoute")[0].style.display="block";
+        document.getElementsByClassName("wnotSafeRoute")[0].style.display="block";
     } else {
-        document.getElementById("walk").style.display="none";
-        document.getElementById("wsafeRoute1").style.display="none";
-        document.getElementById("wnotSafeRoute1").style.display="none";
+        document.getElementsByClassName("walk")[0].style.display="none";
+        document.getElementsByClassName("wsafeRoute")[0].style.display="none";
+        document.getElementsByClassName("wnotSafeRoute")[0].style.display="none";
     }
 }
