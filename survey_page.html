@@ -75,7 +75,7 @@
             <hr class="layoutBorder">
             <h2 class="title">Transportation Survey</h2>
             <h3 class="preferType">How do you plan on commuting to the campus?</h3>
-                <form action="">
+            <form action="results.html">
                     <select class="transportationTypesList"  id="transportationTypes" onchange="show_hide()">
                         <option value=""></option>
                         <option value="bike">Bike</option>
@@ -87,22 +87,20 @@
                         <option value="rideshare">RideShare</option>
                         <option value="walking">Walking</option>
                     </select>
-                </form>
                 <div class="bike">
                     <h2 class="bhaveBike" id="bhaveBike">Do you have a safe route to take to campus?</h2>
-                    <h3 class="bsafeRoute" id="bsafeRoute">Yes <input type="radio" class="bike"></h2>
-                    <h3 class="bnotSafeRoute" id="bnotSafeRoute">No <input type="radio" class="bike"></h2>
+                    <h3 class="bsafeRoute">Yes <input type="radio" id="bsafeRoute" class="yesBike" name="bike"></h2>
+                    <h3 class="bnotSafeRoute">No <input type="radio" id="bnotSafeRoute" class="noBike" name="bike"></h2>
                 </div>
                 <div class="bus">
                     <h2 class="bPlannedRoute" id="bPlannedRoute">Do you have a planned route when taking the bus?</h2>
-                    <h3 class="bHavePlannedRoute" id="bHavePlannedRoute">Yes<input type="radio" class="BRoute"></h3>
-                    <h3 class="bNoPlannedRoute" id="bNoPlannedRoute">No <input type="radio" class="BRoute"></h3>
+                    <h3 class="bHavePlannedRoute">Yes<input type="radio" id="bHavePlannedRoute" class="yesBRoute" name="bRoute"></h3>
+                    <h3 class="bNoPlannedRoute">No <input type="radio" id="bNoPlannedRoute" class="noBRoute" name="bRoute"></h3>
                     <h2 class="bCommuterSleeve" id="bCommuterSleeve">Do you have a commuter sleeve?</h2>
-                    <h3 class="bHaveCommuterSleeve" id="bHaveCommuterSleeve">Yes<input type="radio" class="yesBCommuterSleeve"></h3>
-                    <h3 class="bNoCommuterSleeve" id="bNoCommuterSleeve">No <input type="radio" class="noBCommuterSleeve"></h3>
+                    <h3 class="bHaveCommuterSleeve">Yes<input type="radio" id="bHaveCommuterSleeve" class="yesBCommuterSleeve" name="bCommuterSleeve"></h3>
+                    <h3 class="bNoCommuterSleeve">No <input type="radio" id="bNoCommuterSleeve" class="noBCommuterSleeve" name="bCommuterSleeve"></h3>
                 </div>
                 <div class="car">
-                    <form method="post" action="#" onsubmit="return checkforblank()">
                         <label class="yearLabel" id="yearLabel">Year: &ensp;</label>
                         <input type="text" id="year", name="year" class ="year">
                         <label class="typeOfCar" id="typeOfCar">&emsp;&emsp;Type of Car:&ensp;</label for="cars">
@@ -117,10 +115,8 @@
                             </select>
                         <label class="mpgLabel" id ="mpgLabel"><br>MPG:</label>
                         <input type="text" id="mpg" name="yes" class="mpg">
-                    </form>
                 </div>
                 <div class="carpool">
-                    <form action="">
                         <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="text" id="cpNumPeople1" name="yes" class="cpNumPeople1"></h2>
                         <label class="cpYearLabel" id="cpYearLabel">Year: &ensp;</label>
                         <input type="text" id="cpYear", name="cpYear" class ="cpYear">
@@ -136,20 +132,17 @@
                             </select>
                         <label class="cpMpgLabel" id ="cpMpgLabel"><br>MPG:</label>
                         <input type="text" id="cpMpg" name="cpYes" class="cpMpg">
-                    </form>
                 </div>
                 <div class="lightrail">
                     <form action="">
                         <h2 class="lPlannedRoute" id="lPlannedRoute">Do you have a planned route when taking the light rail?</h2>
-                        <h3 class="lHavePlannedRoute" id="lHavePlannedRoute">Yes<input type="radio" class="lRoute"></h3>
-                        <h3 class="lNoPlannedRoute" id="lNoPlannedRoute">No <input type="radio" class="lRoute"></h3>    
+                        <h3 class="lHavePlannedRoute">Yes<input type="radio" id="lHavePlannedRoute" class="yeslRoute" name="lRoute"></h3>
+                        <h3 class="lNoPlannedRoute">No <input type="radio" id="lNoPlannedRoute" class="nolRoute" name="lRoute"></h3>    
                         <h2 class="lCommuterSleeve" id="lCommuterSleeve">Do you have a commuter sleeve?</h2>
-                        <h3 class="lHaveCommuterSleeve" id="lHaveCommuterSleeve">Yes<input type="radio" class="lCommuterSleeve"></h3>
-                        <h3 class="lNoCommuterSleeve" id="lNoCommuterSleeve">No <input type="radio" class="lCommuterSleeve"></h3>
-                    </form>
+                        <h3 class="lHaveCommuterSleeve">Yes<input type="radio" id="lHaveCommuterSleeve" class="yeslCommuterSleeve" name="lCommuterSleeve"></h3>
+                        <h3 class="lNoCommuterSleeve">No <input type="radio" id="lNoCommuterSleeve" class="nolCommuterSleeve" name="lCommuterSleeve"></h3>
                 </div>
                 <div class ="motorcycle">
-                    <form action="">
                         <label class="myearLabel" id="myearLabel">Year: &ensp;</label>
                         <input type="text" id="myear", name="myear" class ="myear">
                         <label class="motorCycles" id="typeOfMotorcycles">&emsp;&emsp;Type of Motorcycle:&ensp;</label for="motorcycles">
@@ -163,25 +156,36 @@
                             </select>
                         <label class="mmpgLabel" id ="mmpgLabel"><br>MPG:</label>
                         <input type="text" id="mmpg" name="yes" class="mmpg">
-                    </form>
                 </div>
                 <div class="ridesharing">
-                    <form action="">
                         <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="text" id="rNumPeople2" name="yes" class="rNumPeople2"></h2>
                         <h2 class="takeAgain" id="takeAgain">Are you planning on ride sharing to commute back?</h2>
-                        <h3 class="yesTakeAgain" id="yesTakeAgain">Yes<input type="radio" class="TakeAgain1" id="yesTakeAgain1"></h3>
-                        <h3 class="noTakeAgain" id="noTakeAgain">No <input type="radio" class="TakeAgain1" id="noTakeAgain1"></h3>
-                    </form>
+                        <h3 class="yesTakeAgain">Yes<input type="radio" id="yesTakeAgain" class="yesTakeAgain1" id="yesTakeAgain1" name="takeAgain1"></h3>
+                        <h3 class="noTakeAgain">No <input type="radio" id="noTakeAgain" class="noTakeAgain1" id="noTakeAgain1" name="takeAgain1"></h3>
                 </div>
                 <div class="walking">
                     <h2 class="walk" id="walk">Do you have a safe route to take to campus?</h2>
-                    <h3 class="wsafeRoute" id="wsafeRoute">Yes <input type="radio" class="yesBike"></h2>
-                    <h3 class="wnotSafeRoute" id="wnotSafeRoute">No <input type="radio" class="noBike"></h2>
+                    <h3 class="wsafeRoute">Yes <input type="radio" id="wsafeRoute" class="yesWalk" name="wSafeR"></h2>
+                    <h3 class="wnotSafeRoute">No <input type="radio" id="wnotSafeRoute" class="yesWalk" name="wSafeR"></h2>
                 </div>
                 <hr class="sections">
+                <h2 class="timeTraveled">How long does it take for you to get to the campus?<br></h2>
+                <h4 class="approx">*Give an average approximation.</h4>
+                <h3 class="time">
+                    <label for="hrs">Hr(s):</label>
+                    <input class="hrsText" type="text" id="hrs" name="hrs">
+                    <label for="mins">&ensp;Min(s):</label>
+                    <input class="minsText" type="text" id="mins" name="mins">
+                </h3>
+                <hr class="sections">
+                <h2 class="distance">What is your distance from campus?<br></h2>
+                <h3 class="distanceAmount">
+                    <input type="text" id="mi" name="mi">
+                    <label for="hrs">Mile(s)</label>
+                </h3>
+                <hr class="sections">
                 <h2 class="comingToCampus">How often do you come to the campus per week?</h2>
-                <form action="">
-                    <select class="numOfDays">
+                    <select class="numOfDays" id="numOfDays">
                         <option value=""></option>
                         <option value="one">1</option>
                         <option value="two">2</option>
@@ -191,32 +195,13 @@
                         <option value="six">6</option>
                         <option value="seven">7</option>
                     </select>
-                </form>
-         <!--   <hr class="sections">
-            <h2 class="timeTraveled">How long does it take for you to get to the campus?<br></h2>
-            <h4 class="approx">*Give an average approximation.</h4>
-            <h3 class="time">
-                <form action="">
-                    <label for="hrs">Hr(s):</label>
-                    <input class="hrsText" type="text" id="hrs" name="hrs">
-                    <label for="mins">&ensp;Min(s):</label>
-                    <input class="minsText" type="text" id="mins" name="mins">
-                </form>
-            </h3>
-            <hr class="sections">
-            <h2 class="distance">What is your distance from campus?<br></h2>
-            <h3 class="distanceAmount">
-                <form action="">
-                    <input type="text" id="mi" name="mi">
-                    <label for="hrs">Mile(s)</label>
-                </form>
-            </h3> -->
-            <hr class="sections">
-            <h2 class="comeTime">What time do you plan on coming to the campus?</h2>
-                <input type="time" class="plannedTime " id="plannedTime" name="plannedTime"min="01:00" max="12:00" required>
-            <hr class="sections">
-            <input type="button" class="submit" onclick="location.href='results.html';" value="Submit" />
-            <input type="button" class="cancel" onclick="location.href='index(ranking_version).html';" value="Cancel" />
+                <hr class="sections">
+                <h2 class="comeTime">What time do you plan on coming to the campus?</h2>
+                <input type="time" class="plannedTime " id="plannedTime" name="plannedTime"min="1:00" max="23:59" required>
+                <hr class="sections">
+                <input type="submit" class="submit" onclick="store()" value="Submit"/>
+                <input type="button" class="cancel" onclick="location.href='index(ranking_version).html';" value="Cancel" />
+            </form>
         </div>
         <hr class="bottomGBorder">
         <div class="footer">
@@ -232,5 +217,4 @@
             
         </div>
     </body>
-
 </html>
