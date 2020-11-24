@@ -10,7 +10,6 @@
 // Syntax: sessionStorage.setItem("Name of variable in storage", JSvariable.value);
 
 function store() {
-
     // --- Method of Transportation -------------------------------------------------------------
     sessionStorage.setItem("transportationTypes", document.getElementById("transportationTypes").value);
 
@@ -79,5 +78,35 @@ function store() {
 
     // --- Planned Departure Time ---------------------------------------------------------------
     sessionStorage.setItem("plannedTime", document.getElementById("plannedTime").value);
+}
 
+
+// **********************************************************************************************
+//
+// Stores survey values locally in browser
+//
+// **********************************************************************************************
+//
+//
+function calculate_results(){
+    var rank1 = sessionStorage.getItem("ranks");
+    var rank2 = sessionStorage.getItem("ranks2");
+    var rank3 = sessionStorage.getItem("ranks3");
+    var choice1, choice2, choice3;
+
+    if(rank1 == "time"){
+        choice1 = "Car";
+        choice2 = "Motorcycle";
+        choice3 = "Carpool";
+    }
+    else if (rank1 == "sustainability") {
+        choice1 = "Walking";
+        choice2 = "Biking";
+        choice3 = "Light Rail";
+    }
+    else if (rank1 == "money") {
+        choice1 = "Walking";
+        choice2 = "Biking";
+        choice3 = "Carpool";
+    }
 }
