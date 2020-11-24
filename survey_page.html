@@ -8,11 +8,131 @@
         <script src="surveyStorage.js"></script>
         <script>
             function validateForm() {
-              var x = document.forms["surveyForm"]["transportationTypesList"].value;
-              if (x == "") {
-                alert("Insert how you plan on traveling to the campus.");
-                return false;
-              }
+                var transList = document.forms["surveyForm"]["transportationTypesList"].value;
+                var bike = document.forms["surveyForm"]["bike"].value;
+                var bus1 = document.forms["surveyForm"]["bRoute"].value;
+                var bus2 = document.forms["surveyForm"]["bCommuterSleeve"].value;
+                var carYear = document.forms["surveyForm"]["year"].value;
+                var carType = document.forms["surveyForm"]["cars"].value;
+                var carMpg = document.forms["surveyForm"]["mpg"].value;
+                var cpNumPpl = document.forms["surveyForm"]["cpNumPeople"].value;
+                var cpCarYear = document.forms["surveyForm"]["cpYear"].value;
+                var cpCarType = document.forms["surveyForm"]["cpCars"].value;
+                var cpCarMpg = document.forms["surveyForm"]["cpMpg"].value;
+                var lightRail1 = document.forms["surveyForm"]["lRoute"].value;
+                var lightRail2 = document.forms["surveyForm"]["lCommuterSleeve"].value;
+                var motorYear = document.forms["surveyForm"]["myear"].value;
+                var motorType = document.forms["surveyForm"]["motorcycles"].value;
+                var motorMpg = document.forms["surveyForm"]["mmpg"].value;
+                var rsNumPpl = document.forms["surveyForm"]["rNumPeople2"].value;
+                var commuteBack = document.forms["surveyForm"]["takeAgain1"].value;
+                var walking = document.forms["surveyForm"]["wSafeR"].value;
+                var distance = document.forms["surveyForm"]["mi"].value;
+                var comingToCampus = document.forms["surveyForm"]["numOfDays"].value;
+                if (transList == "") {
+                    alert("Insert how you plan on traveling to the campus.");
+                    return false;
+                }
+
+                if (transList == "bike" && bike == "") {
+                    alert("Please select yes or no to indicate that you have a safe route to travel on!")
+                    return false;
+                }
+
+                if (transList == "bus" && bus1 == "") {
+                    alert("Please select yes or no to indicate that you have a planned route!")
+                    return false;
+                }
+
+                if (transList == "bus" && bus2 == "") {
+                    alert("Please select yes or no to indicate if you have a commuter sleeve!")
+                    return false;
+                }
+
+                if (transList == "car" && carYear == "") {
+                    alert("Please fill in the car year!")
+                    return false;
+                }
+
+                if (transList == "car" && carType == "") {
+                    alert("Please select a car type!")
+                    return false;
+                }
+
+                if (transList == "car" && carMpg == "") {
+                    alert("Please fill in the car's MPG!")
+                    return false;
+                }
+
+                if (transList == "carpool" && cpNumPpl == "") {
+                    alert("Please enter the amount of people in the carpool!")
+                    return false;
+                }
+
+                if (transList == "carpool" && cpCarYear == "") {
+                    alert("Please fill in the car year!")
+                    return false;
+                }
+
+                if (transList == "carpool" && cpCarType == "") {
+                    alert("Please fill in the car type!")
+                    return false;
+                }
+
+                if (transList == "carpool" && cpCarMpg == "") {
+                    alert("Please fill in the car's MPG!")
+                    return false;
+                }
+
+                if (transList == "light rail" && lightRail1 == "") {
+                    alert("Please select yes or no to indicate that you have a planned route!")
+                    return false;
+                }
+
+                if (transList == "light rail" && lightRail2 == "") {
+                    alert("Please select yes or no to indicate if you have a commuter sleeve!")
+                    return false;
+                }
+
+                if (transList == "motorcycle" && motorYear == "") {
+                    alert("Please enter the motorcyle year!")
+                    return false;
+                }
+
+                if (transList == "motorcycle" && motorType == "") {
+                    alert("Please select select a motorcycle type!")
+                    return false;
+                }
+
+                if (transList == "motorcycle" && motorMpg == "") {
+                    alert("Please enter the motorcycle's MPG!")
+                    return false;
+                }
+
+                if (transList == "rideshare" && rsNumPpl == "") {
+                    alert("Please fill out the number of people that you plan to rideshare with!")
+                    return false;
+                }
+
+                if (transList == "rideshare" && commuteBack == "") {
+                    alert("Please select yes or no to indicate if you are taking this type of transportation back!")
+                    return false;
+                }
+
+                if (transList == "walking" && walking == "") {
+                    alert("Please select yes or no to indicate that you have a safe route to travel on!")
+                    return false;
+                }
+
+                if (distance == "") {
+                    alert("Please enter your distance from campus!")
+                    return false;
+                }
+
+                if (comingToCampus == "") {
+                    alert("Please enter the amount of days you will be coming to the campus!")
+                    return false;
+                }
             }
         </script>
     </head>
@@ -84,7 +204,7 @@
         <div class="surveyLayout">
             <hr class="layoutBorder">
             <h2 class="title">Transportation Survey</h2>
-            <h3 class="preferType">How do you plan on commuting to the campus?</h3>
+            <h3 class="preferType">What is your prefered method to commute to the campus?</h3>
             <form action="results.html" name="surveyForm" onsubmit="return validateForm()">
                     <select class="transportationTypesList"  id="transportationTypes" name ="transportationTypesList" onchange="show_hide()">
                         <option value=""></option>
@@ -124,10 +244,10 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="mpgLabel" id ="mpgLabel"><br>MPG:</label>
-                        <input type="text" id="mpg" name="yes" class="mpg">
+                        <input type="text" id="mpg" name="mpg" class="mpg">
                 </div>
                 <div class="carpool">
-                        <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="text" id="cpNumPeople1" name="yes" class="cpNumPeople1"></h2>
+                        <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="text" id="cpNumPeople1" name="cpNumPeople" class="cpNumPeople1"></h2>
                         <label class="cpYearLabel" id="cpYearLabel">Year: &ensp;</label>
                         <input type="text" id="cpYear", name="cpYear" class ="cpYear">
                         <label class="cpTypeOfCar" id="cpTypeOfCar">&emsp;&emsp;Type of Car:&ensp;</label for="carpool">
@@ -141,12 +261,12 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="cpMpgLabel" id ="cpMpgLabel"><br>MPG:</label>
-                        <input type="text" id="cpMpg" name="cpYes" class="cpMpg">
+                        <input type="text" id="cpMpg" name="cpMpg" class="cpMpg">
                 </div>
                 <div class="lightrail">
                         <h2 class="lPlannedRoute">Do you have a planned route when taking the light rail?</h2>
                         <h3 class="lHavePlannedRoute">Yes<input type="radio" id="lHavePlannedRoute" class="yeslRoute" name="lRoute" value="yes"></h3>
-                        <h3 class="lNoPlannedRoute">No <input type="radio" id="lNoPlannedRoute" class="nolRoute" name="lRoute" value="no"></h3>
+                        <h3 class="lNoPlannedRoute">No <input type="radio" id="lNoPlannedRoute" class="nolRoute" name="lRoute" value="no"></h3>    
                         <h2 class="lCommuterSleeve">Do you have a commuter sleeve?</h2>
                         <h3 class="lHaveCommuterSleeve">Yes<input type="radio" id="lHaveCommuterSleeve" class="yeslCommuterSleeve" name="lCommuterSleeve" value="yes"></h3>
                         <h3 class="lNoCommuterSleeve">No <input type="radio" id="lNoCommuterSleeve" class="nolCommuterSleeve" name="lCommuterSleeve" value="no"></h3>
@@ -164,10 +284,10 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="mmpgLabel" id ="mmpgLabel"><br>MPG:</label>
-                        <input type="text" id="mmpg" name="yes" class="mmpg">
+                        <input type="text" id="mmpg" name="mmpg" class="mmpg">
                 </div>
                 <div class="ridesharing">
-                        <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="text" id="rNumPeople2" name="yes" class="rNumPeople2"></h2>
+                        <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="text" id="rNumPeople2" name="rNumPeople2" class="rNumPeople2"></h2>
                         <h2 class="takeAgain" id="takeAgain">Are you planning on ride sharing to commute back?</h2>
                         <h3 class="yesTakeAgain">Yes<input type="radio" id="yesTakeAgain1" class="yesTakeAgain1" name="takeAgain1"></h3>
                         <h3 class="noTakeAgain">No <input type="radio" id="noTakeAgain1" class="noTakeAgain1" name="takeAgain1"></h3>
@@ -177,15 +297,6 @@
                     <h3 class="wsafeRoute">Yes <input type="radio" id="wsafeRoute" class="yesWalk" name="wSafeR"></h2>
                     <h3 class="wnotSafeRoute">No <input type="radio" id="wnotSafeRoute" class="yesWalk" name="wSafeR"></h2>
                 </div>
-               <!-- <hr class="sections">
-                <h2 class="timeTraveled">How long does it take for you to get to the campus?<br></h2>
-                <h4 class="approx">*Give an average approximation.</h4>
-                <h3 class="time">
-                    <label for="hrs">Hr(s):</label>
-                    <input class="hrsText" type="text" id="hrs" name="hrs">
-                    <label for="mins">&ensp;Min(s):</label>
-                    <input class="minsText" type="text" id="mins" name="mins">
-                </h3>-->
                 <hr class="sections">
                 <h2 class="distance">What is your distance from campus?<br></h2>
                 <h3 class="distanceAmount">
@@ -194,7 +305,7 @@
                 </h3>
                 <hr class="sections">
                 <h2 class="comingToCampus">How often do you come to the campus per week?</h2>
-                    <select class="numOfDays" id="numOfDays">
+                    <select class="numOfDays" id="numOfDays" name="numOfDays">
                         <option value=""></option>
                         <option value="one">1</option>
                         <option value="two">2</option>
@@ -223,7 +334,7 @@
             </div>
         </div>
         <div class="footer2">
-
+            
         </div>
     </body>
 </html>
