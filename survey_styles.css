@@ -216,7 +216,7 @@ hr {
 .yearLabel{
     float:left;
     font-weight: bold;
-    margin-left:30%;
+    margin-left: 35%;
     display: none;
 }
 
@@ -253,7 +253,7 @@ hr {
 }
 
 .mpg{
-    margin-left: 43.8%;
+    margin-left: 46%;
     /*visibility: hidden;*/
     display: none;
     width: 100px;
@@ -280,7 +280,7 @@ hr {
 .cpYearLabel{
     float:left;
     font-weight: bold;
-    margin-left:30%;
+    margin-left:35%;
     display: none;
 }
 
@@ -317,7 +317,7 @@ hr {
 }
 
 .cpMpg{
-    margin-left: 43.7%;
+    margin-left: 46%;
     /*visibility: hidden;*/
     display: none;
     width: 100px;
@@ -380,7 +380,7 @@ hr {
 .myearLabel{
     float:left;
     font-weight: bold;
-    margin-left:26%;
+    margin-left:33%;
     display: none;
 }
 
@@ -401,7 +401,7 @@ hr {
 }
 
 .mmpg{
-    margin-left: 43.7%;
+    margin-left: 46%;
     /*visibility: hidden;*/
     display: none;
     width: 100px;

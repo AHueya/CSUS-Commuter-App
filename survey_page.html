@@ -148,14 +148,14 @@
             .banner {
                 width: 100%;
             }
-            
-            .carlist{
-                display: none;
-                margin-left: 43%;
-            }
+			.yearLabel{
+				float:left;
+				font-weight: bold;
+				margin-left: %;
+				display: none;
+			}
 
             .mpg{
-                margin-left: 36.7%;
                 /*visibility: hidden;*/
                 display: none;
                 width: 100px;
@@ -182,12 +182,6 @@
                 width: 100%;
             }
 
-            .yearLabel{
-                float:left;
-                font-weight: bold;
-                margin-left:7%;
-                display: none;
-            }
             .cpYearLabel{
                 float:left;
                 font-weight: bold;
@@ -263,12 +257,12 @@
                         <option value="rideshare">RideShare</option>
                         <option value="walking">Walking</option>
                     </select>
-                <div class="bike">
+                <div class="bike" style="text-align:center">
                     <h2 class="bhaveBike">Do you have a safe route to take to campus?</h2>
                     <h3 class="bsafeRoute">Yes <input type="radio" id="bsafeRoute" class="yesBike" name="bike" value="yes"></h3>
                     <h3 class="bnotSafeRoute">No <input type="radio" id="bnotSafeRoute" class="noBike" name="bike" value="no"></h2>
                 </div>
-                <div class="bus">
+                <div class="bus" style="text-align:center">
                     <h2 class="bPlannedRoute">Do you have a planned route when taking the bus?</h2>
                     <h3 class="bHavePlannedRoute">Yes<input type="radio" id="bHavePlannedRoute" class="yesBRoute" name="bRoute" value="yes"></h3>
                     <h3 class="bNoPlannedRoute">No <input type="radio" id="bNoPlannedRoute" class="noBRoute" name="bRoute" value="no"></h3>
@@ -276,7 +270,7 @@
                     <h3 class="bHaveCommuterSleeve">Yes<input type="radio" id="bHaveCommuterSleeve" class="yesBCommuterSleeve" name="bCommuterSleeve" value="yes"></h3>
                     <h3 class="bNoCommuterSleeve">No <input type="radio" id="bNoCommuterSleeve" class="noBCommuterSleeve" name="bCommuterSleeve" value="no"></h3>
                 </div>
-                <div class="car">
+                <div class="car" style="text-align: center;">
                         <label class="yearLabel" id="yearLabel">Year: &ensp;</label>
                         <input type="number" min="1990" max="2021" id="year", name="year" class ="year" >
                         <label class="typeOfCar" id="typeOfCar">&emsp;&emsp;Type of Car:&ensp;</label for="cars">
@@ -292,7 +286,7 @@
                         <label class="mpgLabel" id ="mpgLabel"><br>MPG:</label>
                         <input type="number" min="0" max="100" id="mpg" name="mpg" class="mpg">
                 </div>
-                <div class="carpool">
+                <div class="carpool" style="text-align:center">
                         <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="number" min="2" max="8" id="cpNumPeople1" name="cpNumPeople" class="cpNumPeople1"></h2>
                         <label class="cpYearLabel" id="cpYearLabel">Year: &ensp;</label>
                         <input type="number" min="1990" max="2021" id="cpYear", name="cpYear" class ="cpYear">
@@ -317,7 +311,7 @@
                         <h3 class="lHaveCommuterSleeve">Yes<input type="radio" id="lHaveCommuterSleeve" class="yeslCommuterSleeve" name="lCommuterSleeve" value="yes"></h3>
                         <h3 class="lNoCommuterSleeve">No <input type="radio" id="lNoCommuterSleeve" class="nolCommuterSleeve" name="lCommuterSleeve" value="no"></h3>
                 </div>
-                <div class ="motorcycle">
+                <div class ="motorcycle" style="text-align:center">
                         <label class="myearLabel" id="myearLabel">Year: &ensp;</label>
                         <input type="number" min="1990" max="2021" id="myear", name="myear" class ="myear">
                         <label class="motorCycles" id="typeOfMotorcycles">&emsp;&emsp;Type of Motorcycle:&ensp;</label for="motorcycles">
@@ -332,13 +326,13 @@
                         <label class="mmpgLabel" id ="mmpgLabel"><br>MPG:</label>
                         <input type="number" min="0" max="100" id="mmpg" name="mmpg" class="mmpg">
                 </div>
-                <div class="ridesharing">
+                <div class="ridesharing" style="text-align:center">
                         <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="number" min="1" max="8" id="rNumPeople2" name="rNumPeople2" class="rNumPeople2"></h2>
                         <h2 class="takeAgain" id="takeAgain">Are you planning on ride sharing to commute back?</h2>
                         <h3 class="yesTakeAgain">Yes<input type="radio" id="yesTakeAgain1" class="yesTakeAgain1" name="takeAgain1"></h3>
                         <h3 class="noTakeAgain">No <input type="radio" id="noTakeAgain1" class="noTakeAgain1" name="takeAgain1"></h3>
                 </div>
-                <div class="walking">
+                <div class="walking" style="text-align:center">
                     <h2 class="walk">Do you have a safe route to take to campus?</h2>
                     <h3 class="wsafeRoute">Yes <input type="radio" id="wsafeRoute" class="yesWalk" name="wSafeR"></h2>
                     <h3 class="wnotSafeRoute">No <input type="radio" id="wnotSafeRoute" class="yesWalk" name="wSafeR"></h2>
