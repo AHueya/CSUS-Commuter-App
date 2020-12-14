@@ -42,13 +42,17 @@
         <hr>
 
 		<div id="myModal" class="modal">
-
-		  
+ 
 		  <div class="modal-content" id="modal">
+
+            <div class = modalDesign>
+
 			<span class = "close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 			<h2 class="title">Rankings from Most Important to Least Important:</h2>
             
-            
+            <div style = "text-align : center">
+
+            <h3 class = "rankText">Rank 1:</p>
 			<select class = "rank" name="ranks" id="ranks" onchange="myFunction()">
               <option value="default">Choose</option>
               <option value="money">Money</option>
@@ -56,10 +60,8 @@
 			  <option value="sustainability">Sustainability</option>
             </select>
             <br>
-            <br>
-            <br>
             
-            
+            <p>Rank 2:</p>
 			<select class = "rank" name="ranks" id="ranks2" onchange="myFunction()">
               <option value="default">Choose</option>
 			  <option value="money">Money</option>
@@ -67,36 +69,48 @@
 			  <option value="sustainability">Sustainability</option>
             </select>
              <br>
-             <br>
-             <br>
 
-            
+            <p>Rank 3:</p>
 			<select class = "rank" name="ranks" id="ranks3" onchange="myFunction()">
               <option value="default">Choose</option>
 			  <option value="money">Money</option>
 			  <option value="time">Time</option>
 			  <option value="sustainability">Sustainability</option>
             </select>
-            
-            <br>
             <br>
 
+            </div>
+
+            <br>
             <h3 class="modalText">Click the "Submit" button to move on. (Refresh if you want to restart.)</h3>
-            <br><br>
-            <div class ="center">
-            <button onclick="errorChecking()">Submit</button>
-			
-			<!--<p id="emptyrank1">Rank 1:</p>
-			<p id="emptyrank2">Rank 2:</p>
-		    <p id="emptyrank3">Rank 3:</p>-->
+            <br>
 
-                  
-                  </div>
+            <div style ="text-align: center">
+
+            <button onclick="errorChecking()">Submit</button>
+
+            <h4 class ="modalText">Enter your address. (Optional)</h4>
+
+            <h5 class = "modalText" label for = "homeAddress">Home Address: </label>
+            <br>
+            <input type = "text" id = "home" name = "home"
+                placeholder = "Home Address...">
+
+            <br>
+            <label for = "cityAddress">City: </label>
+            <br>
+            <input type = "text" id = "city" name = "city"
+                placeholder = "City...">
+            <br>
+
+            <label for = "zipAddress">Zip Code: </label>
+            <br>
+            <input type = "text" id = "zipCode" name = "zipAddress"
+                placeholder = "Zip Code...">
+                
+                </div>
 			</div>
 		</div>
-
-
-
 
         <h1>Helpful Links</h1>
         <div class="text" style="text-align:center">
