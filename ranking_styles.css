@@ -69,9 +69,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .rank {
-  transform: translate(475%, 0) !important;
-  margin-left: 10%;
-  align-items: center !important;
+  text-align: center;
   padding: 6px;
   color: rgb(0,78,56);
   border-radius: 4px;
@@ -104,5 +102,3 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: black;
   text-align: center !important;
 }
-
-
