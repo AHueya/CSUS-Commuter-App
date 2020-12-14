@@ -88,25 +88,102 @@ function store() {
 // **********************************************************************************************
 //
 //
-function calculate_results(){
+function calculate_results() {
+    // Grab Data from storage
     var rank1 = sessionStorage.getItem("ranks");
     var rank2 = sessionStorage.getItem("ranks2");
     var rank3 = sessionStorage.getItem("ranks3");
+    var transportationType = sessionStorage.getItem("transportationTypes");
+    var distance = sessionStorage.getItem("mi");
+
+    // Point tracking
     var choice1, choice2, choice3;
 
-    if(rank1 == "time"){
-        choice1 = "Car";
-        choice2 = "Motorcycle";
-        choice3 = "Carpool";
-    }
-    else if (rank1 == "sustainability") {
-        choice1 = "Walking";
-        choice2 = "Biking";
-        choice3 = "Light Rail";
-    }
-    else if (rank1 == "money") {
-        choice1 = "Walking";
-        choice2 = "Biking";
-        choice3 = "Carpool";
-    }
+    var rankings = [
+        [0, 'bike'],
+        [0, 'bus'],
+        [0, 'car'],
+        [0, 'carpool'],
+        [0, 'light rail'],
+        [0, 'motorcycle'],
+        [0, 'rideshare'],
+        [0, 'walking']
+    ];
+
+    // Point allocation will start at 8 and descend to 1 depending on
+    // the best fit for the category (time, sustainability, and money)
+    var scoring = [
+        [6, 9, 24, 18, 12, 21, 15, 3],  // Rank 1 (time)
+        [21, 15, 3, 12, 18, 9, 6, 24],  // Rank 1 (sustainability)
+        [21, 15, 3, 18, 12, 6, 9, 24],  // Rank 1 (money)
+        [4, 6, 16, 12, 8, 14, 10, 2],   // Rank 2 (time)
+        [14, 10, 2, 8, 12, 6, 4, 16],   // Rank 2 (sustainability)
+        [14, 10, 2, 12, 8, 4, 6, 16],   // Rank 2 (money)
+        [2, 3, 8, 6, 4, 7, 5, 1],       // Rank 3 (time)
+        [7, 5, 1, 4, 6, 3, 2, 8],       // Rank 3 (sustainability)
+        [7, 5, 1, 6, 4, 2, 3, 8]        // Rank 3 (money)
+    ];
+
+    var i;
+
+    // Rank 1 Option point calculation (x3)
+    if(rank1 == "time")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[0][i];
+
+    else if (rank1 == "sustainability")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[1][i];
+
+    else if (rank1 == "money")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[2][i];
+
+    // Rank 2 Option point calculation (x2)
+    if(rank2 == "time")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[3][i];
+
+    else if (rank2 == "sustainability")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[4][i];
+
+    else if (rank2 == "money")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[5][i];
+
+    // Rank 3 Option point calculation (x1)
+    if(rank3 == "time")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[6][i];
+
+    else if (rank3 == "sustainability")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[7][i];
+
+    else if (rank3 == "money")
+        for(i=0; i < 8; i++)
+            rankings[i][0] += scoring[5][i];
+
+    // Preferred method of transportation (Bonus points)
+    for(i=0; i < 8; i++)
+        if(transportationType == rankings[i][1])
+            rankings[i][0] += 8;
+
+    // Max distance for walking and biking (point deductions)
+    if(distance > 1)
+        rankings[7][0] -= 8;
+    else if(distance > 5)
+        rankings[0][0] -= 4;
+
+    // Sort
+    rankings.sort();
+    choice1 = rankings[7][1];
+    choice2 = rankings[6][1];
+    choice3 = rankings[5][1];
+
+    document.getElementById("travel_one").innerHTML = choice1;
+    document.getElementById("travel_two").innerHTML = choice2;
+    document.getElementById("travel_three").innerHTML = choice3;
+
 }
