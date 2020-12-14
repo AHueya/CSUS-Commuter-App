@@ -20,7 +20,7 @@ hr {
     background-color: #c4b581;
     margin: 0px;
 }
-input[type=text], focus {
+/*input[type=text], focus {
     font-weight: bold;
     text-align: center;
     outline: none;
@@ -30,7 +30,7 @@ input[type=text], focus {
     border: none;
     box-sizing: border-box;
     border-bottom: 2px solid	rgb(0,78,56);
-}
+}*/
 
 .topGBorder{
     padding-top: 0px;
@@ -138,8 +138,8 @@ input[type=text], focus {
     text-align: center;
     color:rgb(0,78,56);
     font-size: 150%;
-    margin-left: 40%;
-    margin-right: 40%;
+    /*margin-left: 40%;*/
+    /*margin-right: 40%;*/
     margin-bottom: 50px;
 }
 /*----------------------*/
@@ -217,13 +217,16 @@ input[type=text], focus {
 .yearLabel{
     float:left;
     font-weight: bold;
-    margin-left:33%;
+    margin-left:30%;
     display: none;
 }
 
 .year {
     float: left;
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 
 .typeOfCar{
@@ -251,9 +254,12 @@ input[type=text], focus {
 }
 
 .mpg{
-    margin-left: 45%;
+    margin-left: 43.8%;
     /*visibility: hidden;*/
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 /*-----------------------------------*/
 
@@ -266,16 +272,25 @@ input[type=text], focus {
     margin-bottom: 20px;
 }
 
+.cpNumPeople1 {
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
+}
+
 .cpYearLabel{
     float:left;
     font-weight: bold;
-    margin-left:33%;
+    margin-left:30%;
     display: none;
 }
 
 .cpYear {
     float: left;
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 
 
@@ -303,9 +318,12 @@ input[type=text], focus {
 }
 
 .cpMpg{
-    margin-left: 45%;
+    margin-left: 43.7%;
     /*visibility: hidden;*/
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 
 /*---------------------------------------*/
@@ -363,13 +381,16 @@ input[type=text], focus {
 .myearLabel{
     float:left;
     font-weight: bold;
-    margin-left:30%;
+    margin-left:26%;
     display: none;
 }
 
 .myear {
     float: left;
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 
 .mmpgLabel{
@@ -381,9 +402,12 @@ input[type=text], focus {
 }
 
 .mmpg{
-    margin-left: 45%;
+    margin-left: 43.7%;
     /*visibility: hidden;*/
     display: none;
+    width: 100px;
+    text-align: center;
+    color: rgb(0,78,56);
 }
 
 /*------------------------------------*/
@@ -393,6 +417,12 @@ input[type=text], focus {
     text-align: center;
     font-size: 120%;
     display: none;
+}
+
+.rNumPeople2 {
+    text-align: center;
+    width: 100px;
+    color: rgb(0,78,56);
 }
 
 .takeAgain {
@@ -459,6 +489,10 @@ input[type=text], focus {
     color: black;
 }
 
+.mi {
+    text-align: center;
+    width: 100px;
+}
 .distanceAmount {
     text-align: center;
 }
@@ -471,7 +505,7 @@ input[type=text], focus {
 }
 
 .numOfDays {
-    margin-left: 48%;
+    margin-left: 47.5%;
     border-radius: 5px;
     color: rgb(0,78,56);
     padding-top: 2px;
@@ -499,7 +533,7 @@ input[type=text], focus {
     padding-right: 30px;
     padding-left: 30px;
     margin-top: 50px;
-    margin-left: 37%;
+    margin-left: 38%;
     margin-bottom: 50px;
     border-radius: 8px;
     font-size: 100%;
