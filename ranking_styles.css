@@ -1,22 +1,57 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+input[type = text] {
+  width: 50%;
+  padding: 6px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  box-sizing:border-box;
+  text-align: center;
+  color: rgb(0,78,56);
 }
 
+.modal {
+  padding-top: 100px; 
+  width: 100%; 
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none; 
+  position: fixed;  
+  overflow: auto;
+  z-index: 1;  
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.7); 
+}
+
+.close {
+  color: #c4b581;
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalDesign {
+  background-color: #fefefe;
+  color: #000000;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid rgb(0, 0, 0);
+  width: 97%;
+  border-radius: 8px;
+}
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #f0e1b0;
   color: #000000;
   margin: auto;
   padding: 40px;
@@ -35,18 +70,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: #ffffff;
 }
 
-.close {
-  color: #c4b581;
-  float: right;
-  font-size: 45px;
-  font-weight: bold;
+.modalText {
+  text-align: center;
+  font-size: 120%;
+  color: black;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.rankText {
+  font-size: 100%;
+  color: black;
+  text-align: center !important;
 }
 
 .title {
@@ -56,16 +89,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   margin-left: 40%;
   margin-right: 40%;
   margin-bottom: 50px;
-}
-
-.rankNum {
-  
-  color:rgb(0,78,56);
-  font-size: 125%;
-  margin-left: 40%;
-  margin-right: 40%;
-  margin-bottom: 50px;
-
 }
 
 .rank {
@@ -81,24 +104,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
   height: 4em;
   border-radius: 10px;
   text-align: center;
-}
-
-.center {
-  
-  position: relative;
-  left: 95%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.modalText {
-  text-align: center;
-  font-size: 120%;
-  color: black;
-}
-
-.rankText {
-  font-size: 100%;
-  color: black;
-  text-align: center !important;
 }
