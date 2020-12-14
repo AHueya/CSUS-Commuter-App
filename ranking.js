@@ -99,6 +99,12 @@ function rank_store() {
 
     var var_ranks3 = document.getElementById("ranks3");
     sessionStorage.setItem("ranks3", var_ranks3.value);
+
+// -- Stores the Address of the User ---------------------------------------------------------
+    sessionStorage.setItem("home", document.getElementById("home").value);
+    sessionStorage.setItem("city", document.getElementById("city").value);
+    sessionStorage.setItem("zipCode", document.getElementById("zipCode").value);
+
 }
 // -- End Ranking Storage Function ----------------------------------------------------------
 
