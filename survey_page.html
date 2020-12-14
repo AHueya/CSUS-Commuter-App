@@ -139,31 +139,27 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <style>
         @media only screen and (max-width: 700px) {
+            img {
+                max-width: 100%;
+            }
             header {
                 background-image: linear-gradient(270deg, rgba(0,78,56,0.3) 5%, rgba(0,78,56,.6) 100%), url('images/structurev-2000.jpg');
             }
             .banner {
                 width: 100%;
             }
-            .submit{
-                margin-left: 25%;
-                background-color: #BEB86F;
-                border-radius: 8px;
-                color: black;
-            }
+            
             .carlist{
                 display: none;
                 margin-left: 43%;
             }
-            .transportationTypesList {
-                margin-left:35% ;
-                text-align: center;
-            }
+
             .mpg{
-                padding-left: 60px;
-                margin-left: 43%;
-                margin-bottom: 0px;
+                margin-left: 36.7%;
+                /*visibility: hidden;*/
                 display: none;
+                width: 100px;
+                text-align: center;
             }
             .footer img{
                 height: auto;
@@ -185,6 +181,57 @@
                 height: 10%;
                 width: 100%;
             }
+
+            .yearLabel{
+                float:left;
+                font-weight: bold;
+                margin-left:7%;
+                display: none;
+            }
+            .cpYearLabel{
+                float:left;
+                font-weight: bold;
+                margin-left:7%;
+                display: none;
+            }
+
+            .cpMpg{
+                margin-left: 37.6%;
+                /*visibility: hidden;*/
+                display: none;
+                width: 100px;
+                text-align: center;
+            }
+
+            .myearLabel{
+                float:left;
+                font-weight: bold;
+                margin-left:2%;
+                display: none;
+            }
+
+            .motorCycles{
+                font-weight: bold;
+                /*visibility: hidden;*/
+                display: none;
+            }
+
+            .motorcyclelist{
+            /*visibility: hidden;*/
+                padding: 2px;
+                border-radius: 5px;
+                margin-top: 20px;
+                margin-left: 55%;
+                display: none;
+            }
+
+            .mmpg{
+                margin-left: 36.7%;
+                /*visibility: hidden;*/
+                display: none;
+                width: 100px;
+                text-align: center;
+            }
         }
     </style>
     <nav>
@@ -198,15 +245,14 @@
         </div>
     </header>
     <hr class="topGBorder">
-    <div class="breadCrumbs">
-    </div>
     <body>
         <div class="surveyLayout">
             <hr class="layoutBorder">
             <h2 class="title">Transportation Survey</h2>
             <h3 class="preferType">What is your prefered method to commute to the campus?</h3>
-            <form action="results.html" name="surveyForm" onsubmit="return validateForm()">
-                    <select class="transportationTypesList"  id="transportationTypes" name ="transportationTypesList" onchange="show_hide()">
+            <div class="preferTrans"style="text-align: center;">
+                <form action="results.html" name="surveyForm" onsubmit="return validateForm()">
+                    <select class="transportationTypesList"  id="transportationTypes" name ="transportationTypesList" style="text-align: center;" onchange="show_hide()">
                         <option value=""></option>
                         <option value="bike">Bike</option>
                         <option value="bus">Bus</option>
@@ -232,7 +278,7 @@
                 </div>
                 <div class="car">
                         <label class="yearLabel" id="yearLabel">Year: &ensp;</label>
-                        <input type="text" id="year", name="year" class ="year">
+                        <input type="number" min="1990" max="2021" id="year", name="year" class ="year" >
                         <label class="typeOfCar" id="typeOfCar">&emsp;&emsp;Type of Car:&ensp;</label for="cars">
                             <select class="carlist" name="cars" id="cars">
                                 <option value=""></option>
@@ -244,12 +290,12 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="mpgLabel" id ="mpgLabel"><br>MPG:</label>
-                        <input type="text" id="mpg" name="mpg" class="mpg">
+                        <input type="number" min="0" max="100" id="mpg" name="mpg" class="mpg">
                 </div>
                 <div class="carpool">
-                        <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="text" id="cpNumPeople1" name="cpNumPeople" class="cpNumPeople1"></h2>
+                        <h2 class="cpNumPeople" id="cpNumPeople">Number of people: <input type="number" min="2" max="8" id="cpNumPeople1" name="cpNumPeople" class="cpNumPeople1"></h2>
                         <label class="cpYearLabel" id="cpYearLabel">Year: &ensp;</label>
-                        <input type="text" id="cpYear", name="cpYear" class ="cpYear">
+                        <input type="number" min="1990" max="2021" id="cpYear", name="cpYear" class ="cpYear">
                         <label class="cpTypeOfCar" id="cpTypeOfCar">&emsp;&emsp;Type of Car:&ensp;</label for="carpool">
                             <select class="cpCarlist" name="cpCars" id="cpCars">
                                 <option value=""></option>
@@ -261,7 +307,7 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="cpMpgLabel" id ="cpMpgLabel"><br>MPG:</label>
-                        <input type="text" id="cpMpg" name="cpMpg" class="cpMpg">
+                        <input type="number" min="0" max="100" id="cpMpg" name="cpMpg" class="cpMpg">
                 </div>
                 <div class="lightrail">
                         <h2 class="lPlannedRoute">Do you have a planned route when taking the light rail?</h2>
@@ -273,7 +319,7 @@
                 </div>
                 <div class ="motorcycle">
                         <label class="myearLabel" id="myearLabel">Year: &ensp;</label>
-                        <input type="text" id="myear", name="myear" class ="myear">
+                        <input type="number" min="1990" max="2021" id="myear", name="myear" class ="myear">
                         <label class="motorCycles" id="typeOfMotorcycles">&emsp;&emsp;Type of Motorcycle:&ensp;</label for="motorcycles">
                             <select class="motorcyclelist" name="motorcycles" id="motorcycles">
                                 <option value=""></option>
@@ -284,10 +330,10 @@
                                 <option value="other">Other</option>
                             </select>
                         <label class="mmpgLabel" id ="mmpgLabel"><br>MPG:</label>
-                        <input type="text" id="mmpg" name="mmpg" class="mmpg">
+                        <input type="number" min="0" max="100" id="mmpg" name="mmpg" class="mmpg">
                 </div>
                 <div class="ridesharing">
-                        <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="text" id="rNumPeople2" name="rNumPeople2" class="rNumPeople2"></h2>
+                        <h2 class="rNumPeople" id="rNumPeople">Number of people: <input type="number" min="1" max="8" id="rNumPeople2" name="rNumPeople2" class="rNumPeople2"></h2>
                         <h2 class="takeAgain" id="takeAgain">Are you planning on ride sharing to commute back?</h2>
                         <h3 class="yesTakeAgain">Yes<input type="radio" id="yesTakeAgain1" class="yesTakeAgain1" name="takeAgain1"></h3>
                         <h3 class="noTakeAgain">No <input type="radio" id="noTakeAgain1" class="noTakeAgain1" name="takeAgain1"></h3>
@@ -297,30 +343,39 @@
                     <h3 class="wsafeRoute">Yes <input type="radio" id="wsafeRoute" class="yesWalk" name="wSafeR"></h2>
                     <h3 class="wnotSafeRoute">No <input type="radio" id="wnotSafeRoute" class="yesWalk" name="wSafeR"></h2>
                 </div>
+            </div>
                 <hr class="sections">
                 <h2 class="distance">What is your distance from campus?<br></h2>
-                <h3 class="distanceAmount">
-                    <input type="text" id="mi" name="mi">
-                    <label for="hrs">Mile(s)</label>
-                </h3>
+                <div style="text-align: center;">
+                    <h3 class="distanceAmount">
+                        <input type="number" min="0" max="100" id="mi" name="mi" class="mi">
+                        <label for="hrs">Mile(s)</label>
+                    </h3>
+                </div>
                 <hr class="sections">
                 <h2 class="comingToCampus">How often do you come to the campus per week?</h2>
-                    <select class="numOfDays" id="numOfDays" name="numOfDays">
-                        <option value=""></option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                        <option value="five">5</option>
-                        <option value="six">6</option>
-                        <option value="seven">7</option>
-                    </select>
+                    <div style="text-align: center;">
+                        <select class="numOfDays" id="numOfDays" name="numOfDays">
+                            <option value=""></option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                            <option value="five">5</option>
+                            <option value="six">6</option>
+                            <option value="seven">7</option>
+                        </select>
+                    </div>
                 <hr class="sections">
                 <h2 class="comeTime">What time do you plan on coming to the campus?</h2>
-                <input type="time" class="plannedTime " id="plannedTime" name="plannedTime"min="1:00" max="23:59" required>
+                <div style="text-align: center;">
+                    <input type="time" class="plannedTime " id="plannedTime" name="plannedTime"min="1:00" max="23:59" required>
+                </div>
                 <hr class="sections">
-                <input type="submit" class="submit" onclick="store()" value="Submit"/>
-                <input type="button" class="cancel" onclick="location.href='index(ranking_version).html';" value="Cancel" />
+                <div style="text-align: center;">
+                    <input type="submit" class="submit" onclick="store()" value="Submit"/>
+                    <input type="button" class="cancel" onclick="location.href='index(ranking_version).html';" value="Cancel" />
+                </div>
             </form>
         </div>
         <hr class="bottomGBorder">

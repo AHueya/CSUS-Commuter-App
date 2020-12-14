@@ -152,7 +152,6 @@ hr {
 }
 
 .transportationTypesList {
-    margin-left: 42%;
     text-align: center;
     padding: 6px;
     color: rgb(0,78,56);
@@ -505,7 +504,6 @@ hr {
 }
 
 .numOfDays {
-    margin-left: 47.5%;
     border-radius: 5px;
     color: rgb(0,78,56);
     padding-top: 2px;
@@ -522,7 +520,6 @@ hr {
 }
 
 .plannedTime {
-    margin-left: 45%;
     padding: 2px;
 }
 /*----------------------------------------------*/
@@ -533,7 +530,6 @@ hr {
     padding-right: 30px;
     padding-left: 30px;
     margin-top: 50px;
-    margin-left: 38%;
     margin-bottom: 50px;
     border-radius: 8px;
     font-size: 100%;
