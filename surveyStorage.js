@@ -95,48 +95,48 @@ function calculate_results() {
     var rank3 = sessionStorage.getItem("ranks3");
     var transportationType = sessionStorage.getItem("transportationTypes");
     var distance = sessionStorage.getItem("mi");
-	
+
 	//bus variables
 	var bHaveCommuterSleeve = sessionStorage.getItem("bHaveCommuterSleeve");
-	
-	
+
+
 	//Car variables
 	var mpg = sessionStorage.getItem("mpg");
 	var carType = sessionStorage.getItem("cars");
 	var year = sessionStorage.getItem("year");
 	var ownershipCost;
-	
+
 	//Carpool variables
 	var cpNumPeople = sessionStorage.getItem("cpNumPeople");
 	var cpYear = sessionStorage.getItem("cpYear");
 	var cpTypeOfCar = sessionStorage.getItem("cpTypeOfCar");
 	var cpMpg = sessionStorage.getItem("cpMpg");
-	
-	
+
+
 	//lightrail variables
 	var lHaveCommuterSleeve = sessionStorage.getItem("lHaveCommuterSleeve");
-	
+
 	//Motorcycle variables
 	var myear = sessionStorage.getItem("myear");
 	var mmpg = sessionStorage.getItem("mmpg");
-	
-	
+
+
 	//Ridesharing variables
 	var rNumPeople2 = sessionStorage.getItem("rNumPeople2");
-		
+
 	//Dummy passing variables
 	var money1;
 	var sust1;
 	var time1;
-	
+
 	var money2;
 	var sust2;
 	var time2;
-	
+
 	var money3;
 	var sust3;
 	var time3;
-	
+
 
     // Point tracking
     var choice1, choice2, choice3;
@@ -223,19 +223,19 @@ function calculate_results() {
     choice1 = rankings[7][1];
     choice2 = rankings[6][1];
     choice3 = rankings[5][1];
-	
+
 	sessionStorage.setItem("choice1",choice1);
 	sessionStorage.setItem("choice2",choice2);
 	sessionStorage.setItem("choice3",choice3);
-	
-	
-	//Calculate cost of owning a car 
+
+
+	//Calculate cost of owning a car
 	ownershipCost = (403.13 + 2135 + 250)/365; //average cost of maintenance, insurance, and registration per year divided by 365 days
-	
-	
+
+
 	//Calculate money, sustainability, and time for each choice
-	
-	//choice1 
+
+	//choice1
 	if(choice1 == "bike"){
 		money1 = 0;
 		sust1 = 0;
@@ -292,9 +292,9 @@ function calculate_results() {
 		sust1 = 0;
 		time1 = (distance/3)*60; //average walking speed is 3 mph
 	}
-	
+
 	//choice2
-	
+
 	if(choice2 == "bike"){
 		money2 = 0;
 		sust2 = 0;
@@ -351,8 +351,8 @@ function calculate_results() {
 		sust2= 0;
 		time2 = (distance/3)*60; //average walking speed is 3 mph
 	}
-	
-	
+
+
 	//Choice 3
 	if(choice3 == "bike"){
 		money3= 0;
@@ -374,7 +374,7 @@ function calculate_results() {
 		sust3 = (distance/mpg)*8887;			//gallons * grams of CO2 per gallon
 		time3 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
-	
+
 	else if(choice3 == "carpool"){
 		if(cpMpg == 0 || cpNumPeople == 0){
 			cpMpg = 25;
@@ -411,17 +411,17 @@ function calculate_results() {
 		sust3 = 0;
 		time3 = (distance/3)*60; //average walking speed is 3 mph
 	}
-	
-	//Truncate money sust and time 
-	
+
+	//Truncate money sust and time
+
 	var tmoney1 = money1.toFixed(2);
 	var tsust1 = sust1.toFixed(2);
 	var ttime1 = time1.toFixed(2);
-	
+
 	var tmoney2 = money2.toFixed(2);
 	var tsust2 = sust2.toFixed(2);
 	var ttime2 = time2.toFixed(2);
-	
+
 	var tmoney3 = money3.toFixed(2);
 	var tsust3 = sust3.toFixed(2);
 	var ttime3 = time3.toFixed(2);
@@ -431,17 +431,17 @@ function calculate_results() {
 	document.getElementById("money_one").innerHTML = tmoney1;
 	document.getElementById("sust_one").innerHTML = tsust1;
 	document.getElementById("time_one").innerHTML = ttime1;
-	
+
     document.getElementById("travel_two").value = choice2;
 	document.getElementById("money_two").innerHTML = tmoney2;
 	document.getElementById("sust_two").innerHTML = tsust2;
 	document.getElementById("time_two").innerHTML = ttime2;
-	
+
     document.getElementById("travel_three").value = choice3;
 	document.getElementById("money_three").innerHTML = tmoney3;
 	document.getElementById("sust_three").innerHTML = tsust3;
 	document.getElementById("time_three").innerHTML = ttime3;
-	
+
 
 }
 
@@ -450,29 +450,29 @@ function launchMaps(travel_choice){
 	var city = sessionStorage.getItem("city");
 	var zipCode = sessionStorage.getItem("zipCode");
 	var homeElements = home.split(" ");		//parse address by spaces
-	var homeURLReady = ""; 		
+	var homeURLReady = "";
 	var cityElements = city.split(" ");
 	var cityURLReady = "";
 	var travelMode;
-	
+
 	//get choices from temp storage
 	var choice1 = sessionStorage.getItem("choice1");
 	var choice2 = sessionStorage.getItem("choice2");
 	var choice3 = sessionStorage.getItem("choice3");
-	
-	
+
+
 	//Add + between each word in address
 	for(i = 0; i < homeElements.length; i++){
 		if(i != 0) homeURLReady += "+" + homeElements[i];
 		else homeURLReady += homeElements[i];
 	}
-	
+
 	for(i = 0; i < cityElements.length; i++){
-		if(i != 0) cityElements += "+" + cityElements[i];
+		if(i != 0) cityURLReady += "+" + cityElements[i];
 		else cityURLReady += cityElements[i];
 	}
-	
-	
+
+
 	switch(choice1){
 		case "car":
 			choice1 = "driving";
@@ -501,7 +501,7 @@ function launchMaps(travel_choice){
 		default:
 			choice1 = "driving";
 	}
-	
+
 	switch(choice2){
 		case "car":
 			choice2 = "driving";
@@ -530,7 +530,7 @@ function launchMaps(travel_choice){
 		default:
 			choice2 = "driving";
 	}
-	
+
 	switch(choice3){
 		case "car":
 			choice3 = "driving";
@@ -559,8 +559,8 @@ function launchMaps(travel_choice){
 		default:
 			choice3 = "driving";
 	}
-		
-		
+
+
 		switch(travel_choice){
 	case 1:
 		travelMode = choice1;
@@ -575,13 +575,13 @@ function launchMaps(travel_choice){
 		travelMode = "transit";
 
 	}
-		
-		
-		 
+
+
+
 	var mapLink = "https://www.google.com/maps/dir/?api=1&origin=" + homeURLReady +"%2C+" +cityURLReady + "&destination=Sacramento+State+%2C+Sacramento&travelmode="+travelMode;
-	
+
 	window.location.href = mapLink;
-	
-	
-	
+
+
+
 }
