@@ -96,8 +96,14 @@ function calculate_results() {
     var transportationType = sessionStorage.getItem("transportationTypes");
     var distance = sessionStorage.getItem("mi");
 	
+	//bus variables
+	var bHaveCommuterSleeve = sessionStorage.getItem("bCommuterSleeve");
+	
+	
 	//Car variables
 	var mpg = sessionStorage.getItem("mpg");
+	if(mpg == 0)
+		mpg = 25;
 	var carType = sessionStorage.getItem("cars");
 	var year = sessionStorage.getItem("year");
 	var ownershipCost;
@@ -107,6 +113,8 @@ function calculate_results() {
 	var cpYear = sessionStorage.getItem("cpYear");
 	var cpTypeOfCar = sessionStorage.getItem("cpTypeOfCar");
 	var cpMpg = sessionStorage.getItem("cpMpg");
+	if(cpmpg == 0)
+		cpmpg = 25;
 	
 	//lightrail variables
 	var lHaveCommuterSleeve = sessionStorage.getItem("lHaveCommuterSleeve");
@@ -114,6 +122,8 @@ function calculate_results() {
 	//Motorcycle variables
 	var myear = sessionStorage.getItem("myear");
 	var mmpg = sessionStorage.getItem("mmpg");
+	if(mmpg == 0)
+		mmpg = 45;
 	
 	//Ridesharing variables
 	var rNumPeople2 = sessionStorage.getItem("rNumPeople2");
@@ -229,8 +239,9 @@ function calculate_results() {
 		money1 = 0;
 		sust1 = 0;
 		time1 = (distance/12)*60;		//average mph of a bike in the city is 12 mph, and the final result is in minutes
-	} else if(choice1 == "bus"){
-		if(lHaveCommuterSleeve)
+	}
+	else if(choice1 = "bus"){
+		if(bHaveCommuterSleeve)
 			money1 = 0;
 		else
 			money1 = 2.50;
@@ -265,10 +276,10 @@ function calculate_results() {
 		sust1 = (distance/22 *10664)/rNumPeople2;	//distance/average vehicle mpg
 		time1 = (distance/50)*60;
 	}
-	else if(choice1 = "walking"){
+	else if(choice1 == "walking"){
 		money1 = 0;
 		sust1 = 0;
-		time1 = distance/3; //average walking speed is 3 mph
+		time1 = (distance/3)*60; //average walking speed is 3 mph
 	}
 	
 	//choice2
@@ -277,20 +288,21 @@ function calculate_results() {
 		money2 = 0;
 		sust2 = 0;
 		time2 = (distance/12)*60;		//average mph of a bike in the city is 12 mph, and the final result is in minutes
-	}else if(choice2 == "bus"){
-		if(lHaveCommuterSleeve)
+	}
+	else if(choice2 == "bus"){
+		if(bHaveCommuterSleeve)
 			money2 = 0;
 		else
 			money2 = 2.50;
 		sust2 = 1481;
 		time2 = (distance/11)*60;		//average mph of 30 line is about 11 mph *60 for minutes
 	}
-	else if(choice2== "car"){
+	else if(choice2 == "car"){
 		money2= ownershipCost + (distance/mpg * 3);	//ownership cost plus cost of gas
 		sust2 = distance/mpg*10664;			//gallons * grams of CO2 per gallon
 		time2 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
-	else if(choice2== "carpool"){
+	else if(choice2 == "carpool"){
 		money2 = (ownershipCost + (distance/mpg * 3))/cpNumPeople; //cost of car / number of people riding
 		sust2= (sust1 = distance/mpg * 10664)/cpNumPeople;
 		time2= (distance/50)*60;
@@ -308,7 +320,7 @@ function calculate_results() {
 		sust2= distance/mmpg * 6059; //gallons * grams of CO2 per gallon
 		time2 = (distance/50)*60
 	}
-	else if(choice2== "rideshare"){
+	else if(choice2 == "rideshare"){
 		money2 = 2.55 + 2.82*distance;
 		sust2 = (distance/22 *10664)/rNumPeople2;	//distance/average vehicle mpg
 		time2 = (distance/50)*60;
@@ -316,7 +328,7 @@ function calculate_results() {
 	else if(choice2 == "walking"){
 		money2 = 0;
 		sust2= 0;
-		time2 = distance/3; //average walking speed is 3 mph
+		time2 = (distance/3)*60; //average walking speed is 3 mph
 	}
 	
 	
@@ -325,8 +337,9 @@ function calculate_results() {
 		money3= 0;
 		sust3 = 0;
 		time3 = (distance/12)*60;		//average mph of a bike in the city is 12 mph, and the final result is in minutes
-	}else if(choice3 = "bus"){
-		if(lHaveCommuterSleeve)
+	}
+	else if(choice3 == "bus"){
+		if(bHaveCommuterSleeve)
 			money3 = 0;
 		else
 			money3= 2.50;
@@ -338,7 +351,7 @@ function calculate_results() {
 		sust3 = distance/mpg*10664;			//gallons * grams of CO2 per gallon
 		time3 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
-	else if(choice3== "carpool"){
+	else if(choice3 == "carpool"){
 		money3 = (ownershipCost + (distance/mpg * 3))/cpNumPeople; //cost of car / number of people riding
 		sust3 = (sust1 = distance/mpg * 10664)/cpNumPeople;
 		time3 = (distance/50)*60;
@@ -351,7 +364,7 @@ function calculate_results() {
 		sust3= 1481;
 		time3 = (distance/28)*60;	//average speed of lightrail is about 28 mph
 	}
-	else if(choice3== "motorcycle"){
+	else if(choice3 == "motorcycle"){
 		money3 = ownershipCost + (distance/mmpg * 3);
 		sust3 = distance/mmpg * 6059; //gallons * grams of CO2 per gallon
 		time3 = (distance/50)*60
@@ -364,25 +377,38 @@ function calculate_results() {
 	else if(choice3 == "walking"){
 		money3 = 0;
 		sust3 = 0;
-		time3 = distance/3; //average walking speed is 3 mph
+		time3 = (distance/3)*60; //average walking speed is 3 mph
 	}
 	
+	//Truncate money sust and time 
+	
+	var tmoney1 = money1.toFixed(2);
+	var tsust1 = sust1.toFixed(2);
+	var ttime1 = time1.toFixed(2);
+	
+	var tmoney2 = money2.toFixed(2);
+	var tsust2 = sust2.toFixed(2);
+	var ttime2 = time2.toFixed(2);
+	
+	var tmoney3 = money3.toFixed(2);
+	var tsust3 = sust3.toFixed(2);
+	var ttime3 = time3.toFixed(2);
 
 	//Assign values to results page
     document.getElementById("travel_one").innerHTML = choice1;
-	document.getElementById("money_one").innerHTML = money1;
-	document.getElementById("sust_one").innerHTML = sust1;
-	document.getElementById("time_one").innerHTML = time1;
+	document.getElementById("money_one").innerHTML = tmoney1;
+	document.getElementById("sust_one").innerHTML = tsust1;
+	document.getElementById("time_one").innerHTML = ttime1;
 	
     document.getElementById("travel_two").innerHTML = choice2;
-	document.getElementById("money_two").innerHTML = money2;
-	document.getElementById("sust_two").innerHTML = sust2;
-	document.getElementById("time_two").innerHTML = time2;
+	document.getElementById("money_two").innerHTML = tmoney2;
+	document.getElementById("sust_two").innerHTML = tsust2;
+	document.getElementById("time_two").innerHTML = ttime2;
 	
     document.getElementById("travel_three").innerHTML = choice3;
-	document.getElementById("money_three").innerHTML = money3;
-	document.getElementById("sust_three").innerHTML = sust3;
-	document.getElementById("time_three").innerHTML = time3;
+	document.getElementById("money_three").innerHTML = tmoney3;
+	document.getElementById("sust_three").innerHTML = tsust3;
+	document.getElementById("time_three").innerHTML = ttime3;
 	
 	
 	
