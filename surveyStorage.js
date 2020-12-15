@@ -224,6 +224,11 @@ function calculate_results() {
     choice2 = rankings[6][1];
     choice3 = rankings[5][1];
 	
+	sessionStorage.setItem("choice1",choice1);
+	sessionStorage.setItem("choice2",choice2);
+	sessionStorage.setItem("choice3",choice3);
+	
+	
 	//Calculate cost of owning a car 
 	ownershipCost = (403.13 + 2135 + 250)/365; //average cost of maintenance, insurance, and registration per year divided by 365 days
 	
@@ -430,12 +435,12 @@ function calculate_results() {
     document.getElementById("travel_two").value = choice2;
 	document.getElementById("money_two").innerHTML = tmoney2;
 	document.getElementById("sust_two").innerHTML = tsust2;
-	//document.getElementById("time_two").innerHTML = ttime2;
+	document.getElementById("time_two").innerHTML = ttime2;
 	
     document.getElementById("travel_three").value = choice3;
 	document.getElementById("money_three").innerHTML = tmoney3;
 	document.getElementById("sust_three").innerHTML = tsust3;
-	//document.getElementById("time_three").innerHTML = ttime3;
+	document.getElementById("time_three").innerHTML = ttime3;
 	
 
 }
@@ -445,10 +450,16 @@ function launchMaps(travel_choice){
 	var city = sessionStorage.getItem("city");
 	var zipCode = sessionStorage.getItem("zipCode");
 	var homeElements = home.split(" ");		//parse address by spaces
-	var homeURLReady; 		
+	var homeURLReady = ""; 		
 	var cityElements = city.split(" ");
-	var cityURLReady;
+	var cityURLReady = "";
 	var travelMode;
+	
+	//get choices from temp storage
+	var choice1 = sessionStorage.getItem("choice1");
+	var choice2 = sessionStorage.getItem("choice2");
+	var choice3 = sessionStorage.getItem("choice3");
+	
 	
 	//Add + between each word in address
 	for(i = 0; i < homeElements.length; i++){
@@ -462,37 +473,114 @@ function launchMaps(travel_choice){
 	}
 	
 	
-	switch(travel_choice){
-	case "bike":
-		travelMode = "bicycling";
+	switch(choice1){
+		case "car":
+			choice1 = "driving";
+			break;
+		case "bike":
+			choice1 = "bicycling";
+			break;
+		case "walking":
+			choice1 = "walking";
+			break;
+		case "bus":
+			choice1 = "transit";
+			break;
+		case "light rail":
+			choice1 = "transit";
+			break;
+		case "carpool":
+			choice1 = "driving";
+			break;
+		case "rideshare":
+			choice1 = "driving";
+			break;
+		case "motorcycle":
+			choice1 = "driving";
+			break;
+		default:
+			choice1 = "driving";
+	}
+	
+	switch(choice2){
+		case "car":
+			choice2 = "driving";
+			break;
+		case "bike":
+			choice2 = "bicycling";
+			break;
+		case "walking":
+			choice2 = "walking";
+			break;
+		case "bus":
+			choice2 = "transit";
+			break;
+		case "light rail":
+			choice2 = "transit";
+			break;
+		case "carpool":
+			choice2 = "driving";
+			break;
+		case "rideshare":
+			choice2 = "driving";
+			break;
+		case "motorcycle":
+			choice2 = "driving";
+			break;
+		default:
+			choice2 = "driving";
+	}
+	
+	switch(choice3){
+		case "car":
+			choice3 = "driving";
+			break;
+		case "bike":
+			choice3 = "bicycling";
+			break;
+		case "walking":
+			choice3 = "walking";
+			break;
+		case "bus":
+			choice3 = "transit";
+			break;
+		case "light rail":
+			choice3 = "transit";
+			break;
+		case "carpool":
+			choice3 = "driving";
+			break;
+		case "rideshare":
+			choice3 = "driving";
+			break;
+		case "motorcycle":
+			choice3 = "driving";
+			break;
+		default:
+			choice3 = "driving";
+	}
+		
+		
+		switch(travel_choice){
+	case 1:
+		travelMode = choice1;
 		break;
-	case "bus":
-		travelMode = "transit";
+	case 2:
+		travelMode = choice2;
 		break;
-	case "car":
-		travelMode = "driving";
-		break;
-	case "carpool":
-		travelMode = "driving";
-		break;
-	case "motorcycle":
-		travelMode = "driving";
-		break;
-	case "rideshare":
-		travelMode = "driving";
-		break;
-	case "walking":
-		travelMode = "walking";
+	case 3:
+		travelMode = choice3;
 		break;
 	default:
 		travelMode = "transit";
 
 	}
 		
+		
+		 
 	var mapLink = "https://www.google.com/maps/dir/?api=1&origin=" + homeURLReady +"%2C+" +cityURLReady + "&destination=Sacramento+State+%2C+Sacramento&travelmode="+travelMode;
-	document.getElementById("time_three").innerHTML = mapLink;
-	document.getElementById("time_two").innerHTML = homeURLReady;
-	//window.location.href = mapLink;
+	
+	window.location.href = mapLink;
 	
 	
 	
