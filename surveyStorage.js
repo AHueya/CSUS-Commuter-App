@@ -422,20 +422,20 @@ function calculate_results() {
 	var ttime3 = time3.toFixed(2);
 
 	//Assign values to results page
-    document.getElementById("travel_one").innerHTML = choice1;
+    document.getElementById("travel_one").value = choice1;
 	document.getElementById("money_one").innerHTML = tmoney1;
 	document.getElementById("sust_one").innerHTML = tsust1;
 	document.getElementById("time_one").innerHTML = ttime1;
 	
-    document.getElementById("travel_two").innerHTML = choice2;
+    document.getElementById("travel_two").value = choice2;
 	document.getElementById("money_two").innerHTML = tmoney2;
 	document.getElementById("sust_two").innerHTML = tsust2;
-	document.getElementById("time_two").innerHTML = ttime2;
+	//document.getElementById("time_two").innerHTML = ttime2;
 	
-    document.getElementById("travel_three").innerHTML = choice3;
+    document.getElementById("travel_three").value = choice3;
 	document.getElementById("money_three").innerHTML = tmoney3;
 	document.getElementById("sust_three").innerHTML = tsust3;
-	document.getElementById("time_three").innerHTML = ttime3;
+	//document.getElementById("time_three").innerHTML = ttime3;
 	
 
 }
@@ -461,34 +461,27 @@ function launchMaps(travel_choice){
 		else cityURLReady += cityElements[i];
 	}
 	
-	 [0, 'bike'],
-        [0, 'bus'],
-        [0, 'car'],
-        [0, 'carpool'],
-        [0, 'lightrail'],
-        [0, 'motorcycle'],
-        [0, 'rideshare'],
-        [0, 'walking']
+	
 	switch(travel_choice){
-	case bike:
+	case "bike":
 		travelMode = "bicycling";
 		break;
-	case bus:
+	case "bus":
 		travelMode = "transit";
 		break;
-	case car:
+	case "car":
 		travelMode = "driving";
 		break;
-	case carpool:
+	case "carpool":
 		travelMode = "driving";
 		break;
-	case motorcycle:
+	case "motorcycle":
 		travelMode = "driving";
 		break;
-	case rideshare:
+	case "rideshare":
 		travelMode = "driving";
 		break;
-	case walking:
+	case "walking":
 		travelMode = "walking";
 		break;
 	default:
@@ -497,8 +490,9 @@ function launchMaps(travel_choice){
 	}
 		
 	var mapLink = "https://www.google.com/maps/dir/?api=1&origin=" + homeURLReady +"%2C+" +cityURLReady + "&destination=Sacramento+State+%2C+Sacramento&travelmode="+travelMode;
-	
-	window.location.href = mapLink;
+	document.getElementById("time_three").innerHTML = mapLink;
+	document.getElementById("time_two").innerHTML = homeURLReady;
+	//window.location.href = mapLink;
 	
 	
 	
