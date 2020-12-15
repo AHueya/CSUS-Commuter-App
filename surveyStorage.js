@@ -97,13 +97,11 @@ function calculate_results() {
     var distance = sessionStorage.getItem("mi");
 	
 	//bus variables
-	var bHaveCommuterSleeve = sessionStorage.getItem("bCommuterSleeve");
+	var bHaveCommuterSleeve = sessionStorage.getItem("bHaveCommuterSleeve");
 	
 	
 	//Car variables
 	var mpg = sessionStorage.getItem("mpg");
-	if(mpg == 0)
-		mpg = 25;
 	var carType = sessionStorage.getItem("cars");
 	var year = sessionStorage.getItem("year");
 	var ownershipCost;
@@ -113,8 +111,7 @@ function calculate_results() {
 	var cpYear = sessionStorage.getItem("cpYear");
 	var cpTypeOfCar = sessionStorage.getItem("cpTypeOfCar");
 	var cpMpg = sessionStorage.getItem("cpMpg");
-	if(cpmpg == 0)
-		cpmpg = 25;
+	
 	
 	//lightrail variables
 	var lHaveCommuterSleeve = sessionStorage.getItem("lHaveCommuterSleeve");
@@ -122,8 +119,7 @@ function calculate_results() {
 	//Motorcycle variables
 	var myear = sessionStorage.getItem("myear");
 	var mmpg = sessionStorage.getItem("mmpg");
-	if(mmpg == 0)
-		mmpg = 45;
+	
 	
 	//Ridesharing variables
 	var rNumPeople2 = sessionStorage.getItem("rNumPeople2");
@@ -240,22 +236,28 @@ function calculate_results() {
 		sust1 = 0;
 		time1 = (distance/12)*60;		//average mph of a bike in the city is 12 mph, and the final result is in minutes
 	}
-	else if(choice1 = "bus"){
+	else if(choice1 == "bus"){
 		if(bHaveCommuterSleeve)
 			money1 = 0;
 		else
 			money1 = 2.50;
-		sust1 = 1481;
+		sust1 = ((distance/7.2)*8887)/25;
 		time1 = (distance/11)*60;		//average mph of 30 line is about 11 mph *60 for minutes
 	}
 	else if(choice1 == "car"){
+		if(mpg == 0)
+			mpg = 25;
 		money1 = ownershipCost + (distance/mpg * 3);	//ownership cost plus cost of gas
-		sust1 = distance/mpg*10664;			//gallons * grams of CO2 per gallon
+		sust1 = (distance/mpg)*8887;			//gallons * grams of CO2 per gallon
 		time1 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
 	else if(choice1 == "carpool"){
-		money1 = (ownershipCost + (distance/mpg * 3))/cpNumPeople; //cost of car / number of people riding
-		sust1 = (sust1 = distance/mpg * 10664)/cpNumPeople;
+		if(cpMpg == 0 || cpNumPeople == 0){
+			cpMpg = 25;
+			cpNumPeople = 1;
+		}
+		money1 = (ownershipCost + (distance/cpMpg * 3))/cpNumPeople; //cost of car / number of people riding
+		sust1 = (sust1 = distance/cpMpg * 8887)/cpNumPeople;
 		time1 = (distance/50)*60;
 	}
 	else if(choice1 == "light rail"){
@@ -263,17 +265,21 @@ function calculate_results() {
 			money1 = 0;
 		else
 			money1 = 2.50;
-		sust1 = 1481;
+		sust1 = ((distance/7.2)*8887)/25;
 		time1 = (distance/28)*60;	//average speed of lightrail is about 28 mph
 	}
 	else if(choice1 == "motorcycle"){
+		if(mmpg == 0)
+			mmpg = 45;
 		money1 = ownershipCost + (distance/mmpg * 3);
-		sust1 = distance/mmpg * 6059; //gallons * grams of CO2 per gallon
+		sust1 = distance/mmpg * 8887; //gallons * grams of CO2 per gallon
 		time1 = (distance/50)*60
 	}
 	else if(choice1 == "rideshare"){
+		if(rNumPeople2 == 0)
+			rNumPeople2 = 1;
 		money1 = 2.55 + 2.82*distance;
-		sust1 = (distance/22 *10664)/rNumPeople2;	//distance/average vehicle mpg
+		sust1 = (distance/22 *8887)/rNumPeople2;	//distance/average vehicle mpg
 		time1 = (distance/50)*60;
 	}
 	else if(choice1 == "walking"){
@@ -294,17 +300,23 @@ function calculate_results() {
 			money2 = 0;
 		else
 			money2 = 2.50;
-		sust2 = 1481;
+		sust2 = ((distance/7.2)*8887)/25;
 		time2 = (distance/11)*60;		//average mph of 30 line is about 11 mph *60 for minutes
 	}
 	else if(choice2 == "car"){
+		if(mpg == 0)
+			mpg = 25;
 		money2= ownershipCost + (distance/mpg * 3);	//ownership cost plus cost of gas
-		sust2 = distance/mpg*10664;			//gallons * grams of CO2 per gallon
+		sust2 = distance/mpg*8887;			//gallons * grams of CO2 per gallon
 		time2 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
 	else if(choice2 == "carpool"){
-		money2 = (ownershipCost + (distance/mpg * 3))/cpNumPeople; //cost of car / number of people riding
-		sust2= (sust1 = distance/mpg * 10664)/cpNumPeople;
+		if(cpMpg == 0 || cpNumPeople == 0){
+			cpMpg = 25;
+			cpNumPeople = 1;
+		}
+		money2 = (ownershipCost + (distance/cpMpg * 3))/cpNumPeople; //cost of car / number of people riding
+		sust2= (sust1 = distance/cpMpg * 10664)/cpNumPeople;
 		time2= (distance/50)*60;
 	}
 	else if(choice2 == "light rail"){
@@ -312,17 +324,21 @@ function calculate_results() {
 			money2 = 0;
 		else
 			money2= 2.50;
-		sust2 = 1481;
+		sust2 = ((distance/7.2)*8887)/25;
 		time2 = (distance/28)*60;	//average speed of lightrail is about 28 mph
 	}
 	else if(choice2 == "motorcycle"){
+		if(mmpg == 0)
+			mmpg = 45;
 		money2 = ownershipCost + (distance/mmpg * 3);
-		sust2= distance/mmpg * 6059; //gallons * grams of CO2 per gallon
+		sust2= distance/mmpg * 8887; //gallons * grams of CO2 per gallon
 		time2 = (distance/50)*60
 	}
 	else if(choice2 == "rideshare"){
+		if(rNumPeople2 == 0)
+			rNumPeople2 = 1;
 		money2 = 2.55 + 2.82*distance;
-		sust2 = (distance/22 *10664)/rNumPeople2;	//distance/average vehicle mpg
+		sust2 = (distance/22 *8887)/rNumPeople2;	//distance/average vehicle mpg
 		time2 = (distance/50)*60;
 	}
 	else if(choice2 == "walking"){
@@ -343,17 +359,24 @@ function calculate_results() {
 			money3 = 0;
 		else
 			money3= 2.50;
-		sust3 = 1481;
+		sust3 = ((distance/7.2)*8887)/25;
 		time3 = (distance/11)*60;		//average mph of 30 line is about 11 mph *60 for minutes
 	}
 	else if(choice3 == "car"){
+		if(mpg == 0)
+			mpg = 25;
 		money3 = ownershipCost + (distance/mpg * 3);	//ownership cost plus cost of gas
-		sust3 = distance/mpg*10664;			//gallons * grams of CO2 per gallon
+		sust3 = (distance/mpg)*8887;			//gallons * grams of CO2 per gallon
 		time3 = (distance/50)*60;		//distance over the average expected speed in commuting
 	}
+	
 	else if(choice3 == "carpool"){
-		money3 = (ownershipCost + (distance/mpg * 3))/cpNumPeople; //cost of car / number of people riding
-		sust3 = (sust1 = distance/mpg * 10664)/cpNumPeople;
+		if(cpMpg == 0 || cpNumPeople == 0){
+			cpMpg = 25;
+			cpNumPeople = 1;
+		}
+		money3 = (ownershipCost + (distance/cpMpg * 3))/cpNumPeople; //cost of car / number of people riding
+		sust3 = (sust1 = distance/cpMpg * 10664)/cpNumPeople;
 		time3 = (distance/50)*60;
 	}
 	else if(choice3 == "light rail"){
@@ -361,17 +384,21 @@ function calculate_results() {
 			money3= 0;
 		else
 			money3= 2.50;
-		sust3= 1481;
+		sust3= ((distance/7.2)*8887)/25;
 		time3 = (distance/28)*60;	//average speed of lightrail is about 28 mph
 	}
 	else if(choice3 == "motorcycle"){
+		if(mmpg == 0)
+			mmpg = 45;
 		money3 = ownershipCost + (distance/mmpg * 3);
-		sust3 = distance/mmpg * 6059; //gallons * grams of CO2 per gallon
+		sust3 = distance/mmpg * 8887; //gallons * grams of CO2 per gallon
 		time3 = (distance/50)*60
 	}
 	else if(choice3 == "rideshare"){
+		if(rNumPeople2 == 0)
+			rNumPeople2 = 1;
 		money3 = 2.55 + 2.82*distance;
-		sust3 = (distance/22 *10664)/rNumPeople2;	//distance/average vehicle mpg
+		sust3 = (distance/22 *8887)/rNumPeople2;	//distance/average vehicle mpg
 		time3 = (distance/50)*60;
 	}
 	else if(choice3 == "walking"){
@@ -409,10 +436,6 @@ function calculate_results() {
 	document.getElementById("money_three").innerHTML = tmoney3;
 	document.getElementById("sust_three").innerHTML = tsust3;
 	document.getElementById("time_three").innerHTML = ttime3;
-	
-	
-	
-	
 	
 
 }
