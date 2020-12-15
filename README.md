@@ -3,7 +3,7 @@ Computer Software Engineering (CSC-131) project for CSUS UTAPS.
 
 The FMZ Commuter App is a website based app that is intended to help Sac State commuters and visitors determine the best means of transportation when considering money, time, and sustainability.
 
-[System Context Diagram](images/system_context_diagram.PNG)
+![System Context Diagram](images/system_context_diagram.PNG)
 
 ## Function
 The FMZ Commuter App is designed to provide Sac State commuters and vistors with an easy to use guide that will help them make informed decisions about their commute as well as recommendations for alternative transportation.
