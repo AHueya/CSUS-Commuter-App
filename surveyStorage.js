@@ -439,3 +439,67 @@ function calculate_results() {
 	
 
 }
+
+function launchMaps(travel_choice){
+	var home = sessionStorage.getItem("home");
+	var city = sessionStorage.getItem("city");
+	var zipCode = sessionStorage.getItem("zipCode");
+	var homeElements = home.split(" ");		//parse address by spaces
+	var homeURLReady; 		
+	var cityElements = city.split(" ");
+	var cityURLReady;
+	var travelMode;
+	
+	//Add + between each word in address
+	for(i = 0; i < homeElements.length; i++){
+		if(i != 0) homeURLReady += "+" + homeElements[i];
+		else homeURLReady += homeElements[i];
+	}
+	
+	for(i = 0; i < cityElements.length; i++){
+		if(i != 0) cityElements += "+" + cityElements[i];
+		else cityURLReady += cityElements[i];
+	}
+	
+	 [0, 'bike'],
+        [0, 'bus'],
+        [0, 'car'],
+        [0, 'carpool'],
+        [0, 'lightrail'],
+        [0, 'motorcycle'],
+        [0, 'rideshare'],
+        [0, 'walking']
+	switch(travel_choice){
+	case bike:
+		travelMode = "bicycling";
+		break;
+	case bus:
+		travelMode = "transit";
+		break;
+	case car:
+		travelMode = "driving";
+		break;
+	case carpool:
+		travelMode = "driving";
+		break;
+	case motorcycle:
+		travelMode = "driving";
+		break;
+	case rideshare:
+		travelMode = "driving";
+		break;
+	case walking:
+		travelMode = "walking";
+		break;
+	default:
+		travelMode = "transit";
+
+	}
+		
+	var mapLink = "https://www.google.com/maps/dir/?api=1&origin=" + homeURLReady +"%2C+" +cityURLReady + "&destination=Sacramento+State+%2C+Sacramento&travelmode="+travelMode;
+	
+	window.location.href = mapLink;
+	
+	
+	
+}
