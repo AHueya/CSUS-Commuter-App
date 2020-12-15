@@ -242,6 +242,7 @@ hr {
     border-radius: 5px;
     margin-top: 10px;
     display: none;
+	color: rgb(0,78,56);
 }
 
 .mpgLabel{
@@ -305,6 +306,7 @@ hr {
     padding: 2px;
     border-radius: 5px;
     margin-top: 10px;
+	color: rgb(0,78,56);
     display: none;
 }
 
@@ -374,6 +376,7 @@ hr {
     padding: 2px;
     border-radius: 5px;
     margin-top: 10px;
+	color: rgb(0,78,56);
     display: none;
 }
 
@@ -491,6 +494,7 @@ hr {
 .mi {
     text-align: center;
     width: 100px;
+	color: rgb(0,78,56);
 }
 .distanceAmount {
     text-align: center;
