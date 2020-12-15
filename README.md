@@ -14,6 +14,7 @@ Listed below are the functional requirements of our design:
 - Accessible to anyone visiting
 - Ranked priorities from a given list
 - Survey
+- Input error checking
 - Give best option based on individual’s needs
 - Provides information for transportation methods
 - Data collection
