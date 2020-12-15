@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>FMZ Commuter App</title>
+        <link rel="stylesheet" href="css/index_styles.css">
+		<link rel="stylesheet" href="css/ranking_styles.css">
+		<script src="js/ranking.js"></script>
+        <script src="js/surveyStorage.js"></script>
+    </head>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <style>
+        @media only screen and (max-width: 700px) {
+            header {
+                background-image: linear-gradient(270deg, rgba(0,78,56,0.3) 5%, rgba(0,78,56,.6) 100%), url('images/structurev-2000.jpg');
+            }
+            .banner {
+                width: 100%;
+            }
+        }
+    </style>
+    <nav>
+        <img src="images/Primary_Horizontal_3_Color_gld_hnd.png" alt="Sacramento State University Logo" style="width:187px; height:51.25">
+        <hr>
+    </nav>
+    <header>
+        <div class="banner">
+            <h2 class="banner_text">University Transportation & Parking Services</h2>
+            <h4 class="banner_alt_text">California State University, Sacramento</h4>
+        </div>
+    </header>
+    <body>
+        <hr>
+        <h1>FMZ Commuter App</h1>
+        <div class="text">
+          <p>The FMZ Commuter App is an online web tool designed to help you determine the best means of transportation to get to Sac State.</p>
+          <p>Taking three factors into consideration: money, time, and sustainability, the tool will provide you with the optimal form of
+            transportation to get to Sac State.</p>
+          <p>Hit the button below to begin the survey or checkout some other helpful links.</p>
+        </div>
+        <div class="button"><button type="button" name="button" onclick="document.getElementById('myModal').style.display='block'">Begin Survey</button></div>
+        <hr>
+
+		<div id="myModal" class="modal">
+
+		  <div class="modal-content" id="modal">
+
+            <div class = modalDesign>
+
+			<span class = "close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+			<h2 class="title">Rankings from Most Important to Least Important:</h2>
+
+            <div style = "text-align : center">
+
+            <h3 class = "rankText">Rank 1:</p>
+			<select class = "rank" name="ranks" id="ranks" onchange="myFunction()">
+              <option value="default">Choose</option>
+              <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+            </select>
+            <br>
+
+            <p>Rank 2:</p>
+			<select class = "rank" name="ranks" id="ranks2" onchange="myFunction()">
+              <option value="default">Choose</option>
+			  <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+            </select>
+             <br>
+
+            <p>Rank 3:</p>
+			<select class = "rank" name="ranks" id="ranks3" onchange="myFunction()">
+              <option value="default">Choose</option>
+			  <option value="money">Money</option>
+			  <option value="time">Time</option>
+			  <option value="sustainability">Sustainability</option>
+            </select>
+            <br>
+
+            </div>
+
+            <br>
+            <h3 class="modalText">Click the "Submit" button to move on. (Refresh if you want to restart.)</h3>
+            <br>
+
+            <div style ="text-align: center">
+
+            <button onclick="errorChecking()">Submit</button>
+
+            <h4 class ="modalText">Enter your address. (Optional)</h4>
+
+            <h5 class = "modalText" label for = "homeAddress">Home Address: </label>
+            <br>
+            <input class = "home" type = "text" id = "home" name = "home"
+                placeholder = "Home Address...">
+
+            <br>
+            <label for = "cityAddress">City: </label>
+            <br>
+            <input class = "city" type = "text" id = "city" name = "city"
+                placeholder = "City...">
+            <br>
+
+            <label for = "zipAddress">Zip Code: </label>
+            <br>
+            <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode"
+                placeholder = "Zip Code...">
+
+                    </div>
+                </div>
+			</div>
+		</div>
+
+        <h1>Helpful Links</h1>
+        <div class="text" style="text-align:center">
+          <p><a href="https://www.csus.edu/parking-transportation/">University Transportation & Parking Services</a></p>
+          <p><a href="https://www.google.com/maps/place/California+State+University,+Sacramento/@38.561296,-121.4262406,17z/data=!3m1!4b1!4m5!3m4!1s0x809ada8d31c6f4db:0x763ddc32823f5b82!8m2!3d38.5612918!4d-121.4240519">Google Maps</a></p>
+          <p><a href="https://www.uber.com/">Uber</a></p>
+        </div>
+    </body>
+</html>

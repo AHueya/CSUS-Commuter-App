@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="survey_styles.css">
         <title>FMZ Commuting Survey | Sacramento State</title>
-        <script src="transportation_options.js"></script>
-        <script src="surveyStorage.js"></script>
+        <link rel="stylesheet" href="css/survey_styles.css">
+        <script src="js/transportation_options.js"></script>
+        <script src="js/surveyStorage.js"></script>
         <script>
             function validateForm() {
                 var transList = document.forms["surveyForm"]["transportationTypesList"].value;
@@ -306,7 +306,7 @@
                 <div class="lightrail">
                         <h2 class="lPlannedRoute">Do you have a planned route when taking the light rail?</h2>
                         <h3 class="lHavePlannedRoute">Yes<input type="radio" id="lHavePlannedRoute" class="yeslRoute" name="lRoute" value="yes"></h3>
-                        <h3 class="lNoPlannedRoute">No <input type="radio" id="lNoPlannedRoute" class="nolRoute" name="lRoute" value="no"></h3>    
+                        <h3 class="lNoPlannedRoute">No <input type="radio" id="lNoPlannedRoute" class="nolRoute" name="lRoute" value="no"></h3>
                         <h2 class="lCommuterSleeve">Do you have a commuter sleeve?</h2>
                         <h3 class="lHaveCommuterSleeve">Yes<input type="radio" id="lHaveCommuterSleeve" class="yeslCommuterSleeve" name="lCommuterSleeve" value="yes"></h3>
                         <h3 class="lNoCommuterSleeve">No <input type="radio" id="lNoCommuterSleeve" class="nolCommuterSleeve" name="lCommuterSleeve" value="no"></h3>
@@ -383,7 +383,7 @@
             </div>
         </div>
         <div class="footer2">
-            
+
         </div>
     </body>
 </html>
