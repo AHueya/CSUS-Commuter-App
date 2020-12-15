@@ -29,61 +29,126 @@ function myFunction() {
     var valueb = b.options[b.selectedIndex].value;
     var valuec = c.options[c.selectedIndex].value;
 
+    if (value == "default" && valueb == "default" && valuec == "default") {
+        document.getElementById("ranks").options[1].disabled = false;;
+        document.getElementById("ranks2").options[1].disabled = false;
+        document.getElementById("ranks3").options[1].disabled = false;
+        document.getElementById("ranks").options[2].disabled = false;
+        document.getElementById("ranks2").options[2].disabled = false;
+        document.getElementById("ranks3").options[2].disabled = false;
+        document.getElementById("ranks").options[3].disabled = false;
+        document.getElementById("ranks2").options[3].disabled = false;
+        document.getElementById("ranks3").options[3].disabled = false;
+    }
 
+    //-----------------------For rank 1 and 2 reset---------------------------------------
+    if (value == "default" && valueb == "default" && valuec == "money") {
+        document.getElementById("ranks").options[2].disabled = false;
+        document.getElementById("ranks").options[3].disabled = false;
+        document.getElementById("ranks2").options[2].disabled = false;
+        document.getElementById("ranks2").options[3].disabled = false;
+    }
+
+    if (value == "default" && valueb == "default" && valuec == "time") {
+        document.getElementById("ranks").options[1].disabled = false;
+        document.getElementById("ranks").options[3].disabled = false;
+        document.getElementById("ranks2").options[1].disabled = false;
+        document.getElementById("ranks2").options[3].disabled = false;
+    }
+
+    if (value == "default" && valueb == "default" && valuec == "sustainability") {
+        document.getElementById("ranks").options[1].disabled = false;
+        document.getElementById("ranks").options[2].disabled = false;
+        document.getElementById("ranks2").options[1].disabled = false;
+        document.getElementById("ranks2").options[2].disabled = false;
+    }
+
+    //-----------------------For rank 1 and 3 reset---------------------------------------
+    if (value == "default" && valueb == "money" && valuec == "default") {
+        document.getElementById("ranks").options[2].disabled = false;
+        document.getElementById("ranks").options[3].disabled = false;
+        document.getElementById("ranks3").options[2].disabled = false;
+        document.getElementById("ranks3").options[3].disabled = false;
+    }
+
+    if (value == "default" && valueb == "time" && valuec == "default") {
+        document.getElementById("ranks").options[1].disabled = false;
+        document.getElementById("ranks").options[3].disabled = false;
+        document.getElementById("ranks3").options[1].disabled = false;
+        document.getElementById("ranks3").options[3].disabled = false;
+    }
+
+    if (value == "default" && valueb == "sustainability" && valuec == "default") {
+        document.getElementById("ranks").options[1].disabled = false;
+        document.getElementById("ranks").options[2].disabled = false;
+        document.getElementById("ranks3").options[1].disabled = false;
+        document.getElementById("ranks3").options[2].disabled = false;
+    }
+
+      //-----------------------For rank 2 and 3 reset---------------------------------------
+      if (value == "money" && valueb == "default" && valuec == "default") {
+        document.getElementById("ranks2").options[2].disabled = false;
+        document.getElementById("ranks2").options[3].disabled = false;
+        document.getElementById("ranks3").options[2].disabled = false;
+        document.getElementById("ranks3").options[3].disabled = false;
+    }
+
+    if (value == "time" && valueb == "default" && valuec == "default") {
+        document.getElementById("ranks2").options[1].disabled = false;
+        document.getElementById("ranks2").options[3].disabled = false;
+        document.getElementById("ranks3").options[1].disabled = false;
+        document.getElementById("ranks3").options[3].disabled = false;
+    }
+
+    if (value == "sustainabiliity" && valueb == "default" && valuec == "default") {
+        document.getElementById("ranks2").options[1].disabled = false;
+        document.getElementById("ranks2").options[2].disabled = false;
+        document.getElementById("ranks3").options[1].disabled = false;
+        document.getElementById("ranks3").options[2].disabled = false;
+    }
 
     if(value == "money") {
-      //document.getElementById("emptyrank1").innerHTML = "Rank 1: Money"
       document.getElementById("ranks2").options[1].disabled = true;
       document.getElementById("ranks3").options[1].disabled = true;
     }
 
     else if (value == "time") {
-        //document.getElementById("emptyrank1").innerHTML = "Rank 1: Time"
         document.getElementById("ranks2").options[2].disabled = true;
         document.getElementById("ranks3").options[2].disabled = true;
     }
 
     else if (value == "sustainability") {
-        //document.getElementById("emptyrank1").innerHTML = "Rank 1: Sustainability"
+        
         document.getElementById("ranks2").options[3].disabled = true;
         document.getElementById("ranks3").options[3].disabled = true;
       }
-      /*else if (value == {
-          alert("Rank 1 is not chosen");
-      }*/
 
     if(valueb == "money") {
-      //document.getElementById("emptyrank2").innerHTML = "Rank 2: Money"
       document.getElementById("ranks").options[1].disabled = true;
       document.getElementById("ranks3").options[1].disabled = true;
     }
 
     else if (valueb == "time") {
-       // document.getElementById("emptyrank2").innerHTML = "Rank 2: Time"
         document.getElementById("ranks").options[2].disabled = true;
         document.getElementById("ranks3").options[2].disabled = true;
     }
 
     else if (valueb == "sustainability") {
-      //  document.getElementById("emptyrank2").innerHTML = "Rank 2: Sustainability"
         document.getElementById("ranks").options[3].disabled = true;
         document.getElementById("ranks3").options[3].disabled = true;
       }
 
     if (valuec == "money") {
-     // document.getElementById("emptyrank3").innerHTML = "Rank 3: Money"
       document.getElementById("ranks").options[1].disabled = true;
       document.getElementById("ranks2").options[1].disabled = true;
     }
 
     else if (valuec == "time") {
-      //  document.getElementById("emptyrank3").innerHTML = "Rank 3: Time"
         document.getElementById("ranks").options[2].disabled = true;
         document.getElementById("ranks2").options[2].disabled = true;
     }
 
     else if (valuec == "sustainability") {
-       // document.getElementById("emptyrank3").innerHTML = "Rank 3: Sustainability"
         document.getElementById("ranks").options[3].disabled = true;
         document.getElementById("ranks2").options[3].disabled = true;
     }
